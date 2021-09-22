@@ -30,6 +30,8 @@ const Signup = () => {
             <form onSubmit={onSubmit} >
                 <p>Username</p>
                     <input onChange={onChange} name='username' type='text'></input>
+                <p>Email Address</p>
+                    <input onChange={onChange} name='email' type='text'></input>
                 <p>Password</p>
                     <input onChange={onChange} name='password' type='password'></input>
                 <p> Password Confirmation</p>
