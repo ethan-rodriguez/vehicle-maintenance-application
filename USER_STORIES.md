@@ -17,19 +17,17 @@ User ------------------------------------< Vehicle ------------------------< Rou
  -make
  -model
  -vin
+ -mileage
  -vehicle_notes
  -image_url
  -user_id
 
  Routine
- -oil_change
- -air_filter
- -tire_rotation
- -timing_belt
+ -routine
  -vehicle_id
 
 
- User stories
+ User stories:
     -users should be able to log in and have thier own vehicles separate from other users (user must serialize vehicle and routine info) (will have to fetch vehicles from /me route)
     -once logged in users are taken to thier garage where they can add a vehicle to the garage, or view currently owned vehicles
     -users can click on a vehicle to see its maintenance history.
