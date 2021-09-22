@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-  wrap_parameters :user include: [:username, :email, :password, :password_confirmation]
+  wrap_parameters :user, include: [:username, :email, :password, :password_confirmation]
 
   # GET /users
   def index
