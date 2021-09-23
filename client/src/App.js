@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-        {/* <Signup /> */}
+        <Signup />
         <Login />
         <Switch>
             <Route exact path='/signup'>
