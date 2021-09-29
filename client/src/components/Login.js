@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Login = () => {
 
@@ -35,6 +37,7 @@ const Login = () => {
                     <input onChange={onChange} name='password' type='password'></input><br />
                     <input type='submit'></input>
             </form>
+            <Link to='/logout'>Logout</Link>
         </div>
     )
 }

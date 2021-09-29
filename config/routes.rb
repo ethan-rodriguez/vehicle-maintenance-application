@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create' 
   
   #  ---User Logout ---
-  post '/destroy', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
-  
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

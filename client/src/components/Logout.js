@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const Logout = () => {
 
@@ -12,11 +13,14 @@ const Logout = () => {
         .then(resp => resp.json())
         .then(data => {
             console.log(data)
-            handleLogout()
+            // handleLogout()
         })
     })
 
-    
+    const handleLogout = () => {
+        
+    }
+
     return (
         <div>
             
