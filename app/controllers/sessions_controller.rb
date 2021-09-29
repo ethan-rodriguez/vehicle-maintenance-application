@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    
+
     # POST /login
     def create
         user = User.find_by(username: params[:username])
@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
         else
             render json: { errors: ["Invalid username or password combination"] }, status: :unauthorized
         end
-
     end
 
     # POST /logout
@@ -22,5 +21,4 @@ class SessionsController < ApplicationController
         end
     end
 
-    
 end
