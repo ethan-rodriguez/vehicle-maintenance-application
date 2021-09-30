@@ -34,11 +34,11 @@ const Signup = () => {
                     <input onChange={onChange} name='email' type='text'></input>
                 <p>Password</p>
                     <input onChange={onChange} name='password' type='password'></input>
-                <p> Password Confirmation</p>
+                <p>Password Confirmation</p>
                     <input onChange={onChange} name='password_confirmation' type='password'></input><br />
                     <input type='submit'></input>
             </form>
-            <p>Already a member? <a href='/loging' >Login</a></p>
+            <p>Already a member? <a href='/login' >Login</a></p>
         </div>
     )
 }
