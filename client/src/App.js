@@ -8,6 +8,10 @@ import Logout from './components/Logout';
 function App() {
 
 
+  const handleUsers = (data) => {
+    console.log(data)
+  }
+
   return (
     <div className="App">
         <Signup />

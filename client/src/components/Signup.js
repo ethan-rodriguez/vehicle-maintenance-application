@@ -38,6 +38,7 @@ const Signup = () => {
                     <input onChange={onChange} name='password_confirmation' type='password'></input><br />
                     <input type='submit'></input>
             </form>
+            <p>Already a member? <a href='/loging' >Login</a></p>
         </div>
     )
 }
