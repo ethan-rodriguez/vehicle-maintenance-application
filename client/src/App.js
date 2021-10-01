@@ -5,6 +5,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import NavBar from './components/NavBar';
+import Garage from './components/Garage';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
         <NavBar />
+        <Garage />
           <Switch>
               <Route exact path='/signup'>
                   <Signup />
