@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { Form, Button, FloatingLabel } from 'react-bootstrap'
+import { useHistory } from 'react-router'
 
-const Signup = () => {
+const Signup = ({handleAuth}) => {
 
     const [state, setState] = useState({})
+
+    const history = useHistory()
 
     const onChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value})
@@ -23,6 +26,10 @@ const Signup = () => {
         .then(resp => resp.json())
         .then(data => {
             console.log(data)
+            handleAuth(data)
+            if (!data.errors){
+                history.push('/garage')
+            }
         })
     }
 
