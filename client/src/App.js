@@ -4,8 +4,8 @@ import { Switch, Route } from 'react-router-dom'
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Logout from './components/Logout';
-import NavBar from './components/NavBar';
 import Garage from './components/Garage';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -17,7 +17,6 @@ function App() {
   return (
     <div className="App">
         <NavBar />
-        <Garage />
           <Switch>
               <Route exact path='/signup'>
                   <Signup />
@@ -27,6 +26,9 @@ function App() {
               </Route>
               <Route exact path='/logout'>
                   <Logout />
+              </Route>
+              <Route exact path='/garage'>
+                <Garage />
               </Route>
           </Switch>
     </div>
