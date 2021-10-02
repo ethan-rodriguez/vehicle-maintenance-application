@@ -1,3 +1,23 @@
 .App {
   text-align: center;
 }
+
+.signup__div {
+  padding-top: 5%;
+}
+
+.login__div {
+  padding-top: 5%;
+}
+
+.login__form {
+  width: 25%;
+  margin-left: 40%;
+  margin-top: 5%;
+}
+
+.signup__form {
+  width: 25%;
+  margin-left: 40%;
+  margin-top: 5%;
+}
