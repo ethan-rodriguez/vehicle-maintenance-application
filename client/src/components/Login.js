@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, FloatingLabel } from 'react-bootstrap'
+// import { FloatingLabel } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -41,18 +42,20 @@ const Login = () => {
             </form><br />
             <Link to='/logout'>Logout</Link> */}
             <div className='login__form' >
-                <Form>
-                    <Form.Group onChange={onChange} className="mb-3" controlId="formBasicName">
-                        <Form.Label>Enter name</Form.Label>
-                        <Form.Control type="username" placeholder="Enter username" />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword" onChange={onChange} >
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control onChange={onChange} type="password" name='password' placeholder="Password" />
-                    </Form.Group>
-
-                    <Button onSubmit={onSubmit} variant="primary" type="submit">
+                <Form onSubmit={onSubmit} >
+                    
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Email address"
+                        className="mb-3"
+                    >
+                        <Form.Control onChange={onChange} name='email' type="email" placeholder="name@example.com" />
+                    </FloatingLabel>
+                    <FloatingLabel controlId="floatingPassword" label="Password">
+                        <Form.Control onChange={onChange} name='password' type="password" placeholder="Password" />
+                    </FloatingLabel><br />
+                    
+                    <Button variant="primary" type="submit">
                         Submit
                     </Button>
                 </Form>

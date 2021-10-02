@@ -44,7 +44,7 @@ const Signup = () => {
             </div> */}
             <div className='signup__form' >
                 <Form>
-                    <Form.Group className="mb-3" controlId="formBasicUsername">
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="username" placeholder="Enter username" />
                         
