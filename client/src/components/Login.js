@@ -42,6 +42,7 @@ const Login = () => {
             </form><br />
             <Link to='/logout'>Logout</Link> */}
             <div className='login__form' >
+                <h6>Member login.</h6>
                 <Form onSubmit={onSubmit} >
                     
                     <FloatingLabel
@@ -58,7 +59,8 @@ const Login = () => {
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
-                </Form>
+                </Form><br />
+                <p>Not a member? Sign up <a href='/signup'>here</a></p>
             </div>
         </div>
     )

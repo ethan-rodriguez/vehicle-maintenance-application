@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, FloatingLabel } from 'react-bootstrap'
 
 const Signup = () => {
 
@@ -43,35 +43,41 @@ const Signup = () => {
                 <p>Already a member? <a href='/login' >Login</a></p>
             </div> */}
             <div className='signup__form' >
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="username" placeholder="Enter username" />
-                        
-                    </Form.Group>
+                <h6>To become a member, sign up below.</h6>
+                <Form onSubmit={onSubmit} >
+                    
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Username"
+                        className="mb-3">
+                        <Form.Control onChange={onChange} name='username' type="name" placeholder="name@example.com" />
+                    </FloatingLabel>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Email address"
+                        className="mb-3">
+                        <Form.Control onChange={onChange} name='email' type="email" placeholder="name@example.com" />
+                    </FloatingLabel>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Create a Password" />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPasswordConfirmation">
-                        <Form.Label>Password Confirmation</Form.Label>
-                        <Form.Control type="password_confirmation" placeholder="Confirm Password" />
-                    </Form.Group>
-
+                    <FloatingLabel 
+                        controlId="floatingPassword"
+                        label="Password">
+                        <Form.Control onChange={onChange} name='password' type="password" placeholder="Password" />
+                    </FloatingLabel><br />
+                    
+                    <FloatingLabel 
+                        controlId="floatingPassword"
+                        label="Password Confirmation">
+                        <Form.Control onChange={onChange} name='password_confirmation' type="password" placeholder="Password Confirmation" />
+                    </FloatingLabel><br />
+                    
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
-                </Form>
+                    
+                </Form><br />
+                    <p>Already a member? Login <a href='/login'>here</a></p>
             </div>
         </div>
     )
