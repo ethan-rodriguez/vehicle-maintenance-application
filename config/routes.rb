@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   #  ---User Logout ---
   delete '/logout', to: 'sessions#destroy'
 
+  get '/me', to: 'users#show'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
