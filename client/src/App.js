@@ -26,7 +26,7 @@ function App() {
   }
 
 const handleState = () => {
-  
+
 }
 
   return (
@@ -37,7 +37,7 @@ const handleState = () => {
                   <Signup handleAuth={handleAuth}/>
               </Route>
               <Route exact path='/login'>
-                  <Login />
+                  <Login handleAuth={handleAuth} />
               </Route>
               <Route exact path='/logout'>
                   <Logout />

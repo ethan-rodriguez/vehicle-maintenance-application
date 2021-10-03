@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, FloatingLabel } from 'react-bootstrap'
-// import { FloatingLabel } from 'react'
+import { useHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const Login = () => {
+const Login = ({handleAuth}) => {
 
     const [state, setState] = useState({})
+
+    const history = useHistory
 
     const onChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value})
@@ -26,7 +28,9 @@ const Login = () => {
         fetch('/login', config)
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
+            console.log(data, 'login fetch')
+            handleAuth(data)
+            history.push('/garage')
         })
     }
 
