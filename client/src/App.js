@@ -16,17 +16,17 @@ function App() {
 
   const history = useHistory()
 
-  const handleAuth = (data) => {
-    console.log(data, 'handle auth function')
-    data.errors ? setErrors(data.errors) : handleState()
+  const handleLogin = (data) => {
+    console.log(data, 'handleLogin')
+    data.errors ? setErrors(data.errors) : handleState(data)
     if (!data.errors){
-      history.pushState('/garage')
+      history.push('/garage')
       setErrors([])
     }
   }
 
-const handleState = () => {
-
+const handleState = (data) => {
+  setUser(data.username)
 }
 
   return (
@@ -34,10 +34,10 @@ const handleState = () => {
         <NavBar />
           <Switch>
               <Route exact path='/signup'>
-                  <Signup handleAuth={handleAuth}/>
+                  <Signup handleAuth={handleLogin}/>
               </Route>
               <Route exact path='/login'>
-                  <Login handleAuth={handleAuth} />
+                  <Login handleLogin={handleLogin} />
               </Route>
               <Route exact path='/logout'>
                   <Logout />

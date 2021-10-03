@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Button, FloatingLabel } from 'react-bootstrap'
 import { useHistory } from 'react-router'
 
-const Signup = ({handleAuth}) => {
+const Signup = ({handleLogin}) => {
 
     const [state, setState] = useState({})
 
@@ -25,8 +25,8 @@ const Signup = ({handleAuth}) => {
         fetch('/users', config)
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
-            handleAuth(data)
+            console.log(data, 'signup fetch')
+            handleLogin(data)
             if (!data.errors){
                 history.push('/garage')
             }

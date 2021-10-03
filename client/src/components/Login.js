@@ -5,11 +5,11 @@ import { useHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const Login = ({handleAuth}) => {
+const Login = ({handleLogin}) => {
 
     const [state, setState] = useState({})
 
-    const history = useHistory
+    const history = useHistory()
 
     const onChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value})
@@ -29,7 +29,7 @@ const Login = ({handleAuth}) => {
         .then(resp => resp.json())
         .then(data => {
             console.log(data, 'login fetch')
-            handleAuth(data)
+            handleLogin(data)
             history.push('/garage')
         })
     }
