@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:update, :destroy]
   wrap_parameters :user, include: [:username, :email, :password, :password_confirmation]
 
   # GET /users
@@ -9,17 +9,20 @@ class UsersController < ApplicationController
     render json: @users
   end
 
-  # GET /users/1
+  # GET (ME / Auto) /users/1
   def show
-    render json: @user, include: vehicles
+    user = User.find_by(id: session[:user_id])
+    if user
+      render json: user
+    end
   end
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created, location: @user
+      render json: user, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end

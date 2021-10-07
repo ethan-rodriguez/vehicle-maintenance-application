@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :routines
   resources :vehicles
-  resources :users
+  resources :users, only: [:create]
 
   # ----User Login ---
   post '/login', to: 'sessions#create' 

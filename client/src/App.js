@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route, useHistory } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Logout from './components/Logout';
@@ -19,23 +19,31 @@ function App() {
 
   const handleLogin = (data) => {
     console.log(data, 'handleLogin')
-    data.errors ? setErrors(data.errors) : handleState(data)
+    data.errors ? setErrors(data.errors) : setUser(data)
     if (!data.errors){
       history.push('/garage')
       setErrors([])
     }
   }
 
-const handleState = (data) => {
-  setUser(data)
+
+const checkSessionId = () => {
+  fetch('/me')
+  .then(resp => resp.json())
+  .then(data => {
+    console.log(data, 'this is the auto login fetch')
+    setUser(data)
+  })
 }
+useEffect(checkSessionId, [])
+
 
   return (
     <div className="App">
         <NavBar user={user} />
           <Switch>
               <Route exact path='/signup'>
-                  <Signup handleAuth={handleLogin}/>
+                  <Signup handleLogin={handleLogin}/>
               </Route>
               <Route exact path='/login'>
                   <Login handleLogin={handleLogin} />
