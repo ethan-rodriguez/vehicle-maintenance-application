@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import Garage from './components/Garage';
 import NavBar from './components/NavBar';
+import CreateVehicle from './components/CreateVehicle';
 
 function App() {
 
@@ -44,6 +45,9 @@ const handleState = (data) => {
               </Route>
               <Route exact path='/garage'>
                 <Garage />
+              </Route>
+              <Route exact path='/createvehicle'>
+                <CreateVehicle />
               </Route>
           </Switch>
     </div>
