@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Button, FloatingLabel } from 'react-bootstrap'
+import { Form, Button, FloatingLabel, Row, Col } from 'react-bootstrap'
 
 
 
@@ -12,41 +12,83 @@ const CreateVehicle = () => {
         setState({...state, [e.target.name]: e.target.value})
     }
 
+
+    const onSubmit = () => {
+
+    }
+
     return (
-        <div>
+        <div className='create__vehicle__form'> 
             <Form onSubmit={onSubmit} >
-                    
+                <Row className="g-2">
+                    <Col md>
+                        <FloatingLabel
+                            controlId="floatingInput"
+                            label="Year"
+                            className="mb-3"
+                        >
+                            <Form.Control type="number" placeholder="2014" />
+                        </FloatingLabel>
+                    </Col>
+                    <Col md>
+                        <FloatingLabel
+                            controlId="floatingInput"
+                            label="Make"
+                            className="mb-3"
+                        >
+                            <Form.Control type="text" placeholder="Toyota" />
+                        </FloatingLabel>
+                    </Col>
+                    <Col md>
                     <FloatingLabel
-                        controlId="floatingInput"
-                        label="Username"
-                        className="mb-3">
-                        <Form.Control onChange={onChange} name='username' type="name" placeholder="name@example.com" />
-                    </FloatingLabel>
-
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Email address"
-                        className="mb-3">
-                        <Form.Control onChange={onChange} name='email' type="email" placeholder="name@example.com" />
-                    </FloatingLabel>
-
-                    <FloatingLabel 
-                        controlId="floatingPassword"
-                        label="Password">
-                        <Form.Control onChange={onChange} name='password' type="password" placeholder="Password" />
-                    </FloatingLabel><br />
+                            controlId="floatingInput"
+                            label="Model"
+                            className="mb-3"
+                        >
+                            <Form.Control type="text" placeholder="Camry" />
+                        </FloatingLabel>
+                    </Col>
+                </Row>
+                <Row className="g-2">
+                    <Col md>
+                        <FloatingLabel
+                            controlId="floatingInput"
+                            label="Mileage"
+                            className="mb-3"
+                        >
+                            <Form.Control type="number" placeholder="74,000" />
+                        </FloatingLabel>
+                    </Col>
+                    <Col md>
+                        <FloatingLabel
+                            controlId="floatingInput"
+                            label="VIN"
+                            className="mb-3"
+                        >
+                            <Form.Control type="text" placeholder="4Y1SL65848Z411439" />
+                        </FloatingLabel>
+                    </Col>
                     
-                    <FloatingLabel 
-                        controlId="floatingPassword"
-                        label="Password Confirmation">
-                        <Form.Control onChange={onChange} name='password_confirmation' type="password" placeholder="Password Confirmation" />
-                    </FloatingLabel><br />
-                    
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                    
-                </Form>
+                </Row>
+                <Row className="g-2">
+                    <Col md>
+                        <FloatingLabel controlId="floatingTextarea" label="Vehicle notes" className="mb-3">
+                            <Form.Control as="textarea" placeholder="Vehicle notes" />
+                        </FloatingLabel>
+                    </Col>
+                </Row>
+                <Row className="g-2">
+                    <Col md>
+                        <Form.Group controlId="formFileLg" className="mb-3">
+                            <Form.Label>Upload vehicle photo</Form.Label>
+                            <Form.Control type="file" size="md" />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+            </Form>
         </div>
     )
 }
