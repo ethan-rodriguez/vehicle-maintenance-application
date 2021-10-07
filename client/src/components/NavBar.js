@@ -1,12 +1,13 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
 
-const NavBar = () => {
+const NavBar = ({user}) => {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
                 <Container>
-                <Navbar.Brand href="/garage">Welcome to your Garage</Navbar.Brand>
+                
+                <Navbar.Brand href="/garage">{user ? `${user.username}'s'` : ''} Garage</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">

@@ -27,12 +27,12 @@ function App() {
   }
 
 const handleState = (data) => {
-  setUser(data.username)
+  setUser(data)
 }
 
   return (
     <div className="App">
-        <NavBar />
+        <NavBar user={user} />
           <Switch>
               <Route exact path='/signup'>
                   <Signup handleAuth={handleLogin}/>
