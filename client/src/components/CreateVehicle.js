@@ -13,9 +13,23 @@ const CreateVehicle = () => {
     }
 
 
-    const onSubmit = () => {
-
+    const onSubmit = (e) => {
+        e.preventDefault()
+        let config = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(state)
+        }
+        fetch('vehicles', config)
+        .then(resp => resp.json())
+        .then(data => {
+            console.log(data, 'vehicle created!')
+        })
     }
+
 
     return (
         <div className='create__vehicle__form'> 
@@ -27,7 +41,7 @@ const CreateVehicle = () => {
                             label="Year"
                             className="mb-3"
                         >
-                            <Form.Control type="number" placeholder="2014" />
+                            <Form.Control onChange={onChange} name='year' type="number" placeholder="2014" />
                         </FloatingLabel>
                     </Col>
                     <Col md>
@@ -36,7 +50,7 @@ const CreateVehicle = () => {
                             label="Make"
                             className="mb-3"
                         >
-                            <Form.Control type="text" placeholder="Toyota" />
+                            <Form.Control onChange={onChange} name='make' type="text" placeholder="Toyota" />
                         </FloatingLabel>
                     </Col>
                     <Col md>
@@ -45,7 +59,7 @@ const CreateVehicle = () => {
                             label="Model"
                             className="mb-3"
                         >
-                            <Form.Control type="text" placeholder="Camry" />
+                            <Form.Control onChange={onChange} name='model' type="text" placeholder="Camry" />
                         </FloatingLabel>
                     </Col>
                 </Row>
@@ -56,7 +70,7 @@ const CreateVehicle = () => {
                             label="Mileage"
                             className="mb-3"
                         >
-                            <Form.Control type="number" placeholder="74,000" />
+                            <Form.Control onChange={onChange} name='mileage' type="number" placeholder="74,000" />
                         </FloatingLabel>
                     </Col>
                     <Col md>
@@ -65,7 +79,7 @@ const CreateVehicle = () => {
                             label="VIN"
                             className="mb-3"
                         >
-                            <Form.Control type="text" placeholder="4Y1SL65848Z411439" />
+                            <Form.Control onChange={onChange} name='vin' type="text" placeholder="4Y1SL65848Z411439" />
                         </FloatingLabel>
                     </Col>
                     
@@ -73,7 +87,7 @@ const CreateVehicle = () => {
                 <Row className="g-2">
                     <Col md>
                         <FloatingLabel controlId="floatingTextarea" label="Vehicle notes" className="mb-3">
-                            <Form.Control as="textarea" placeholder="Vehicle notes" />
+                            <Form.Control onChange={onChange} name='vechicle_notes' as="textarea" placeholder="Vehicle notes" />
                         </FloatingLabel>
                     </Col>
                 </Row>
@@ -81,7 +95,7 @@ const CreateVehicle = () => {
                     <Col md>
                         <Form.Group controlId="formFileLg" className="mb-3">
                             <Form.Label>Upload vehicle photo</Form.Label>
-                            <Form.Control type="file" size="md" />
+                            <Form.Control onChange={onChange} name='image_url' type="file" size="md" />
                         </Form.Group>
                     </Col>
                 </Row>

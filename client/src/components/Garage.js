@@ -2,6 +2,7 @@ import React from 'react'
 import background from '../images/garage.jpeg'
 
 
+
 const Garage = () => {
     return (
         <div id='garage__div' style={{ 
@@ -12,6 +13,7 @@ const Garage = () => {
             }} >
 
             <p>this is garage</p>
+            
         </div>
     )
 }

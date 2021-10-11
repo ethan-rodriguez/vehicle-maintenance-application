@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: [:show, :update, :destroy]
+  wrap_parameters :vehicle, include: [:year, :make, :model, :vin, :mileage, :vehicle_notes, :image_url, :user_id]
 
   # GET /vehicles
   def index
@@ -15,10 +16,10 @@ class VehiclesController < ApplicationController
 
   # POST /vehicles
   def create
-    @vehicle = Vehicle.new(vehicle_params)
-
-    if @vehicle.save
-      render json: @vehicle, status: :created, location: @vehicle
+    if session[:user_id]
+      @vehicle = Vehicle.new(vehicle_params)
+      @vehicle.update!(user_id: session[:user_id])
+        render json: @vehicle, status: :created, location: @vehicle
     else
       render json: @vehicle.errors, status: :unprocessable_entity
     end
