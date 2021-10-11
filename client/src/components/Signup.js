@@ -57,7 +57,7 @@ const Signup = ({handleLogin}) => {
                         controlId="floatingInput"
                         label="Username"
                         className="mb-3">
-                        <Form.Control onChange={onChange} name='username' type="name" placeholder="name@example.com" />
+                        <Form.Control onChange={onChange} name='username' type="text" placeholder="Name" />
                     </FloatingLabel>
 
                     <FloatingLabel
