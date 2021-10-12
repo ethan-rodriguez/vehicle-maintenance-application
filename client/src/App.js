@@ -18,9 +18,9 @@ function App() {
   const history = useHistory()
 
   const handleLogin = (data) => {
-    console.log(data, 'handleLogin')
     data.errors ? setErrors(data.errors) : setUser(data)
     if (!data.errors){
+      console.log(`Setting current user to ${data.username}.`)
       history.push('/garage')
       setErrors([])
     }
@@ -31,7 +31,7 @@ const checkSessionId = () => {
   fetch('/me')
   .then(resp => resp.json())
   .then(data => {
-    console.log(data, 'this is the auto login fetch')
+    console.log(`${data.username} has been auto logged in`)
     setUser(data)
   })
 }
@@ -49,7 +49,7 @@ useEffect(checkSessionId, [])
                   <Login handleLogin={handleLogin} />
               </Route>
               <Route exact path='/logout'>
-                  <Logout />
+                  <Logout setUser={setUser} />
               </Route>
               <Route exact path='/garage'>
                 <Garage />

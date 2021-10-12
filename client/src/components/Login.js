@@ -28,9 +28,9 @@ const Login = ({handleLogin}) => {
         fetch('/login', config)
         .then(resp => resp.json())
         .then(data => {
-            console.log(data, 'login fetch')
             handleLogin(data)
             history.push('/garage')
+            console.log(data, `${data.username} is now logged in!`)
         })
     }
 

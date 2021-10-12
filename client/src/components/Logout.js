@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
-const Logout = () => {
+const Logout = ({setUser}) => {
 
     const history = useHistory()
 
@@ -10,21 +10,24 @@ const Logout = () => {
             method: "DELETE",
         }
         fetch('/logout', config)
-        .then(resp => resp.json())
-        .then(data => {
-            console.log(data)
-            // handleLogout()
-        })
+            setUser(null)
+            setTimeout(() => {
+                console.log(`User has been logged out.`)
+                history.push('/login')
+            }, 2000)
+        
     })
 
-    const handleLogout = () => {
+    // const handleLogout = () => {
         
-    }
+    // }
 
     return (
         <div>
+            <br/>
+            <br/>
             
-            <h3>this is logout</h3>
+            <h3>Logging out...</h3>
             
         </div>
     )
