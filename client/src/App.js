@@ -43,10 +43,10 @@ useEffect(checkSessionId, [])
         <NavBar user={user} />
           <Switch>
               <Route exact path='/signup'>
-                  <Signup handleLogin={handleLogin}/>
+                  <Signup handleLogin={handleLogin} errors={errors} />
               </Route>
               <Route exact path='/login'>
-                  <Login handleLogin={handleLogin} />
+                  <Login handleLogin={handleLogin} errors={errors} />
               </Route>
               <Route exact path='/logout'>
                   <Logout setUser={setUser} />

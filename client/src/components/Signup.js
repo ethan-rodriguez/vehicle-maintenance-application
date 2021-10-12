@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Form, Button, FloatingLabel } from 'react-bootstrap'
 import { useHistory } from 'react-router'
 
-const Signup = ({handleLogin}) => {
+
+const Signup = ({handleLogin, errors}) => {
 
     const [state, setState] = useState({})
 
