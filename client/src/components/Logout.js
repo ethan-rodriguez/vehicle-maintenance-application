@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { Spinner } from 'react-bootstrap'
 
 const Logout = ({setUser}) => {
 
@@ -23,11 +24,12 @@ const Logout = ({setUser}) => {
     // }
 
     return (
-        <div>
+        <div className='spinner__div'>
             <br/>
             <br/>
-            
-            <h3>Logging out...</h3>
+            <Spinner animation="border" role="status" >
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>
             
         </div>
     )
