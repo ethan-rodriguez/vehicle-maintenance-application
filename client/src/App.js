@@ -56,10 +56,7 @@ useEffect(checkSessionId, [])
                 <Garage />
               </Route>
               <Route exact path='/createvehicle'>
-                <CreateVehicle />
-              </Route>
-              <Route exact path='/createvehicle'>
-                <Errors errors={errors} />
+                <CreateVehicle errors={errors} />
               </Route>
           </Switch>
     </div>

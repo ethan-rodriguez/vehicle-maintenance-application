@@ -19,13 +19,9 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    user = User.create(user_params)
-    if user
-      session[:user_id] = user.id
-      render json: user, status: :created
-    else
-      render json: user.errors, status: :unprocessable_entity
-    end
+    user = User.create!(user_params)
+    session[:user_id] = user.id
+    render json: user, status: :created
   end
 
   # PATCH/PUT /users/1

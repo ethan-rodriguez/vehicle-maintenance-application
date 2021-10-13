@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, FloatingLabel } from 'react-bootstrap'
 import { useHistory } from 'react-router'
+import Errors from './Errors'
 
 
 const Signup = ({handleLogin, errors}) => {
@@ -28,9 +29,6 @@ const Signup = ({handleLogin, errors}) => {
         .then(data => {
             console.log(data, 'signup fetch')
             handleLogin(data)
-            if (!data.errors){
-                history.push('/garage')
-            }
         })
     }
 
@@ -87,6 +85,7 @@ const Signup = ({handleLogin, errors}) => {
                 </Form><br />
                     <p>Already a member? Login <a href='/login'>here</a></p>
             </div>
+            <Errors errors={errors} />
         </div>
     )
 }
