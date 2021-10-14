@@ -84,7 +84,7 @@ const Signup = ({handleLogin, errors}) => {
                     
                 </Form><br />
                     <p>Already a member? Login <a href='/login'>here</a></p>
-            </div>
+            </div><br />
             <Errors errors={errors} />
         </div>
     )
