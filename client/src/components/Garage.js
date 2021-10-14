@@ -1,5 +1,6 @@
 import React from 'react'
 import background from '../images/garage.jpeg'
+import VehicleCarousel from './VehicleCarousel'
 
 
 
@@ -12,7 +13,9 @@ const Garage = () => {
             height: '100vh',
             }} >
 
-            <p>this is garage</p>
+            <div>
+                {/* <VehicleCarousel /> */}
+            </div>
             
         </div>
     )

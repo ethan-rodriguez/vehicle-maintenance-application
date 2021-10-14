@@ -8,7 +8,7 @@ import Logout from './components/Logout';
 import Garage from './components/Garage';
 import NavBar from './components/NavBar';
 import CreateVehicle from './components/CreateVehicle';
-import Errors from './components/Errors';
+
 
 function App() {
 
@@ -42,7 +42,9 @@ const checkSessionId = () => {
   .then(resp => resp.json())
   .then(data => {
     console.log(`${data.username} has been auto logged in`)
+    console.log(`${data.username} owns ${data.vehicles.length} vehicle(s)`)
     setUser(data)
+    setVehicles(data.vehicles)
   })
 }
 useEffect(checkSessionId, [])
