@@ -25,13 +25,14 @@
 
 .create__vehicle__form {
   width: 50%;
-  margin-left: 25%;
+  margin: 40px auto 20px auto;
   margin-top: 8%;
 }
 
 .spinner__div {
-  margin-top: 5%;
+  margin-top: 20%;
   margin-left: 7%;
+  margin: 50px auto 20px auto;
 }
 
 .errors__div {

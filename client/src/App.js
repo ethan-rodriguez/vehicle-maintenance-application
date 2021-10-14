@@ -13,7 +13,8 @@ import Errors from './components/Errors';
 function App() {
 
   
-  const [user ,setUser] = useState(null)
+  const [user, setUser] = useState(null)
+  const [vehicles, setVehicles] = useState([])
   const [errors, setErrors] = useState([])
 
   const history = useHistory()
@@ -26,6 +27,14 @@ function App() {
       setErrors([])
     }
   }
+
+const handleVehicles = (data) => {
+  data.errors ? setErrors(data.errors) : setVehicles(data)
+  if (!data.errors){
+    console.log(`${data.year} ${data.make} ${data.model} added to garage`)
+    history.push('/garage')
+  }
+}
 
 
 const checkSessionId = () => {
@@ -56,7 +65,7 @@ useEffect(checkSessionId, [])
                 <Garage />
               </Route>
               <Route exact path='/createvehicle'>
-                <CreateVehicle errors={errors} />
+                <CreateVehicle handleVehicles={handleVehicles} errors={errors} />
               </Route>
           </Switch>
     </div>
