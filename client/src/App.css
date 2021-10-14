@@ -3,23 +3,24 @@
 }
 
 .signup__div {
-  padding-top: 5%;
+  padding-top: 40px;
 }
 
 .login__div {
-  padding-top: 5%;
+  padding-top: 40px;
 }
 
 .login__form {
   width: 27%;
-  margin-left: 40%;
+  margin: 40px auto 20px auto;
   margin-top: 5%;
 }
 
 .signup__form {
   width: 27%;
-  margin-left: 38%;
+  margin: 40px auto 20px auto;
   margin-top: 5%;
+  
 }
 
 .create__vehicle__form {
@@ -31,4 +32,11 @@
 .spinner__div {
   margin-top: 5%;
   margin-left: 7%;
+}
+
+.errors__div {
+  margin-left: 38%;
+  width: 27%;
+  text-align: justify;
+
 }

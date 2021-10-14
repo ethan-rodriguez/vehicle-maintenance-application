@@ -7,7 +7,7 @@ const Errors = ({errors}) => {
     }
 
     return (
-        <div>
+        <div className="errors__div">
             {generateErrors()}
         </div>
     )
