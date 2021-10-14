@@ -63,7 +63,7 @@ const Signup = ({handleLogin, errors}) => {
                         controlId="floatingInput"
                         label="Email address"
                         className="mb-3">
-                        <Form.Control onChange={onChange} name='email' type="email" placeholder="name@example.com" />
+                        <Form.Control onChange={onChange} name='email' type="text" placeholder="name@example.com" />
                     </FloatingLabel>
 
                     <FloatingLabel 

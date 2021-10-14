@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import { Form, Button, FloatingLabel } from 'react-bootstrap'
 import { useHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Errors from './Errors';
 
 
-const Login = ({handleLogin}) => {
+const Login = ({handleLogin, errors}) => {
 
     const [state, setState] = useState({})
 
@@ -28,23 +29,14 @@ const Login = ({handleLogin}) => {
         fetch('/login', config)
         .then(resp => resp.json())
         .then(data => {
-            handleLogin(data)
-            history.push('/garage')
             console.log(data, `${data.username} is now logged in!`)
+            handleLogin(data)
         })
     }
 
 
     return (
         <div className='login__div' >
-            {/* <form onSubmit={onSubmit} >
-                <p>Username</p>
-                    <input onChange={onChange} name='username' type='text'></input>
-                <p>Password</p>
-                    <input onChange={onChange} name='password' type='password'></input><br />
-                    <input type='submit'></input>
-            </form><br />
-            <Link to='/logout'>Logout</Link> */}
             <div className='login__form' >
                 <h6>Member login.</h6>
                 <Form onSubmit={onSubmit} >
@@ -66,6 +58,7 @@ const Login = ({handleLogin}) => {
                 </Form><br />
                 <p>Not a member? Sign up <a href='/signup'>here</a></p>
             </div>
+            <Errors errors={errors} />
         </div>
     )
 }
