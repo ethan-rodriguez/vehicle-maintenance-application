@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Form, Button, FloatingLabel } from 'react-bootstrap'
-import { useHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Errors from './Errors';
 
@@ -10,7 +8,7 @@ const Login = ({handleLogin, errors}) => {
 
     const [state, setState] = useState({})
 
-    const history = useHistory()
+    
 
     const onChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value})

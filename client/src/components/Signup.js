@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { Form, Button, FloatingLabel } from 'react-bootstrap'
-import { useHistory } from 'react-router'
 import Errors from './Errors'
 
 
 const Signup = ({handleLogin, errors}) => {
 
     const [state, setState] = useState({})
-
-    const history = useHistory()
 
     const onChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value})
@@ -34,20 +31,6 @@ const Signup = ({handleLogin, errors}) => {
 
     return (
         <div className='signup__div' >
-            {/* <div className='signup__form'>
-                <form onSubmit={onSubmit} >
-                    <p>Username</p>
-                        <input onChange={onChange} name='username' type='text'></input>
-                    <p>Email Address</p>
-                        <input onChange={onChange} name='email' type='text'></input>
-                    <p>Password</p>
-                        <input onChange={onChange} name='password' type='password'></input>
-                    <p>Password Confirmation</p>
-                        <input onChange={onChange} name='password_confirmation' type='password'></input><br />
-                        <input type='submit'></input>
-                </form>
-                <p>Already a member? <a href='/login' >Login</a></p>
-            </div> */}
             <div className='signup__form' >
                 <h6>To become a member, sign up below.</h6>
                 <Form onSubmit={onSubmit} >

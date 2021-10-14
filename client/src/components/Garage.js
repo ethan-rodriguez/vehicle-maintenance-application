@@ -1,10 +1,19 @@
 import React from 'react'
 import background from '../images/garage.jpeg'
-import VehicleCarousel from './VehicleCarousel'
+import VehicleCard from './VehicleCard'
 
 
 
-const Garage = () => {
+
+const Garage = ({vehicles}) => {
+
+    const renderVehicles = () => {
+        return vehicles.map(vehicle => {
+            return <VehicleCard vehicle={vehicle} key={vehicle.id} />
+        })
+    }
+
+
     return (
         <div id='garage__div' style={{ 
             backgroundImage: `url(${background})`, 
@@ -15,6 +24,9 @@ const Garage = () => {
 
             <div>
                 {/* <VehicleCarousel /> */}
+                <br />
+                <br />
+                {renderVehicles()}
             </div>
             
         </div>
