@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Errors from './Errors';
 
 
-const Login = ({handleLogin, errors}) => {
+const Login = ({handleLogin, checkSessionId, errors}) => {
 
     const [state, setState] = useState({})
 
@@ -29,6 +29,7 @@ const Login = ({handleLogin, errors}) => {
         .then(data => {
             console.log(data, `${data.username} is now logged in!`)
             handleLogin(data)
+            checkSessionId()
         })
     }
 

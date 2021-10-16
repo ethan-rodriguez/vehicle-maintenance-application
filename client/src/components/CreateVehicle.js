@@ -5,7 +5,7 @@ import Errors from './Errors'
 
 
 
-const CreateVehicle = ({handleVehicles, errors}) => {
+const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
 
     const [state, setState] = useState({})
 
@@ -29,6 +29,7 @@ const CreateVehicle = ({handleVehicles, errors}) => {
         .then(data => {
             console.log(data, 'vehicle created!')
             handleVehicles(data)
+            checkSessionId()
         })
     }
 
