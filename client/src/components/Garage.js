@@ -1,6 +1,7 @@
 import React from 'react'
 import background from '../images/garage.jpeg'
 import VehicleCard from './VehicleCard'
+import Row from './Row'
 
 
 
@@ -21,12 +22,10 @@ const Garage = ({vehicles}) => {
             backgroundSize: 'cover',
             height: '100vh',
             }} >
-
-            <div>
+            <div className='vehicle__row'>
+                <Row vehicles={vehicles} />
                 {/* <VehicleCarousel /> */}
-                <br />
-                <br />
-                {renderVehicles()}
+                {/* {renderVehicles()} */}
             </div>
             
         </div>
