@@ -5,5 +5,10 @@
 
 .card__div {
     display: inline-flex;
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 35%;
 }
 

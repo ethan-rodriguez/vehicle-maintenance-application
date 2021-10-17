@@ -2,7 +2,7 @@ import React from 'react'
 import VehicleCard from './VehicleCard'
 import './Row.css'
 
-const Row = ({vehicles}) => {
+const Row = ({vehicles, user}) => {
 
 
     const renderVehicles = () => {
@@ -14,7 +14,8 @@ const Row = ({vehicles}) => {
 
     return (
             <div className='row__div'>
-                    <h2>Row title</h2>
+                    <br />
+                    <h4>{`${user.username} please select the vehicle you would like to work on today.`}</h4>
                 <div className="card__div">
                     {renderVehicles()}
                 </div>

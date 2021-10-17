@@ -5,7 +5,7 @@ import Row from './Row'
 
 
 
-const Garage = ({vehicles}) => {
+const Garage = ({vehicles, user}) => {
 
     // const renderVehicles = () => {
     //     return vehicles.map(vehicle => {
@@ -22,7 +22,7 @@ const Garage = ({vehicles}) => {
             height: '100vh',
             }} >
             <div className='vehicle__row'>
-                <Row vehicles={vehicles} />
+                <Row vehicles={vehicles} user={user}/>
                 {/* <VehicleCarousel /> */}
                 {/* {renderVehicles()} */}
             </div>
