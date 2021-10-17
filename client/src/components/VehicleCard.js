@@ -25,7 +25,7 @@ const VehicleCard = ({vehicle}) => {
             <div className="row">
                 <div className="column">
                     <div className="card">
-                        <h3>Card 1</h3>
+                        <h6>{vehicle.make}</h6>
                         {/* <p>{vehicle.make}</p> */}
                         {/* <p>{vehicle.model}</p> */}
                     </div>

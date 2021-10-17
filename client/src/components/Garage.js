@@ -1,6 +1,5 @@
 import React from 'react'
 import background from '../images/garage.jpeg'
-import VehicleCard from './VehicleCard'
 import Row from './Row'
 
 
@@ -8,11 +7,11 @@ import Row from './Row'
 
 const Garage = ({vehicles}) => {
 
-    const renderVehicles = () => {
-        return vehicles.map(vehicle => {
-            return <VehicleCard vehicle={vehicle} key={vehicle.id} />
-        })
-    }
+    // const renderVehicles = () => {
+    //     return vehicles.map(vehicle => {
+    //         return <VehicleCard vehicle={vehicle} key={vehicle.id} />
+    //     })
+    // }
 
 
     return (
