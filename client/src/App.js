@@ -36,7 +36,7 @@ const handleVehicles = (data) => {
   }
 }
 
-
+// ---On page reload, checks session ID and automatically logs in user, sets user and sets user's vehicles
 const checkSessionId = () => {
   fetch('/me')
   .then(resp => resp.json())

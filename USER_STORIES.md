@@ -28,8 +28,8 @@ User ------------------------------------< Vehicle ------------------------< Rou
 
 
  User stories:
-    -users should be able to log in and have thier own vehicles separate from other users (user must serialize vehicle and routine info) (will have to fetch vehicles from /me route)
-    -once logged in users are taken to thier garage where they can add a vehicle to the garage, or view currently owned vehicles
+    -users should be able to log in and have thier own vehicles separate from other users (user must serialize vehicle and routine info) (will have to fetch vehicles from /me route) DONE!
+    -once logged in users are taken to thier garage where they can add a vehicle to the garage, or view currently owned vehicles DONE!
     -users can click on a vehicle to see its maintenance history.
     -users can add or edit a maintenance history
     -users will have full crud of vehicles and maintenance history

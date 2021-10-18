@@ -17,7 +17,7 @@ const Garage = ({vehicles, user }) => {
 
     return (
         <div id='garage__div' style={{ 
-            backgroundImage: `url(${background})`, 
+            // backgroundImage: `url(${background})`, 
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             height: '100vh',

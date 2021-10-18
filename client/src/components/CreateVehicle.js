@@ -86,6 +86,15 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                                 <Form.Control onChange={onChange} name='vin' type="text" placeholder="4Y1SL65848Z411439" />
                             </FloatingLabel>
                         </Col>
+                        <Col md>
+                        <FloatingLabel
+                                controlId="floatingInput"
+                                label="Image URL"
+                                className="mb-3"
+                            >
+                                <Form.Control onChange={onChange} name='image_url' type="text" placeholder="http://www.somewhere.com" />
+                            </FloatingLabel>
+                        </Col>
                         
                     </Row>
                     <Row className="g-2">
@@ -95,14 +104,14 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                             </FloatingLabel>
                         </Col>
                     </Row>
-                    <Row className="g-2">
+                    {/* <Row className="g-2">
                         <Col md>
                             <Form.Group controlId="formFileLg" className="mb-3">
                                 <Form.Label>Upload vehicle photo</Form.Label>
                                 <Form.Control onChange={onChange} name='image_url' type="file" size="md" />
                             </Form.Group>
                         </Col>
-                    </Row>
+                    </Row> */}
                             <Button variant="primary" type="submit">
                                 Submit
                             </Button>
