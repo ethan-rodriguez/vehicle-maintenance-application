@@ -20,8 +20,9 @@
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 90%;
   font-size: 18px;
+  border-radius: 32px;
 }
 
 .card button:hover {

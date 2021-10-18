@@ -30,7 +30,7 @@ const NavBar = ({user}) => {
                     <Nav>
                     <Nav.Link href="/login">Login</Nav.Link>
                     <Nav.Link eventKey={2} href="/signup">Signup</Nav.Link>
-                    <Nav.Link href="/logout">Log out</Nav.Link>
+                    <Nav.Link href="/logout">Logout</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
                 

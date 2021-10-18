@@ -13,7 +13,7 @@ import CreateVehicle from './components/CreateVehicle';
 function App() {
 
   
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
   const [vehicles, setVehicles] = useState([])
   const [errors, setErrors] = useState([])
 
