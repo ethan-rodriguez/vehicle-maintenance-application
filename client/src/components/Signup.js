@@ -34,7 +34,6 @@ const Signup = ({handleLogin, errors}) => {
             <div className='signup__form' >
                 <h6>To become a member, sign up below.</h6>
                 <Form onSubmit={onSubmit} >
-                    
                     <FloatingLabel
                         controlId="floatingInput"
                         label="Username"
@@ -54,17 +53,16 @@ const Signup = ({handleLogin, errors}) => {
                         label="Password">
                         <Form.Control onChange={onChange} name='password' type="password" placeholder="Password" />
                     </FloatingLabel><br />
-                    
+
                     <FloatingLabel 
                         controlId="floatingPassword"
                         label="Password Confirmation">
                         <Form.Control onChange={onChange} name='password_confirmation' type="password" placeholder="Password Confirmation" />
                     </FloatingLabel><br />
-                    
+
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
-                    
                 </Form><br />
                     <p>Already a member? Login <a href='/login'>here</a></p>
             </div><br />

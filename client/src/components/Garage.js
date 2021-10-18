@@ -3,17 +3,7 @@ import background from '../images/garage.jpeg'
 import Row from './Row'
 
 
-
-
-
 const Garage = ({vehicles, user }) => {
-
-    // const renderVehicles = () => {
-    //     return vehicles.map(vehicle => {
-    //         return <VehicleCard vehicle={vehicle} key={vehicle.id} />
-    //     })
-    // }
-    
 
     return (
         <div id='garage__div' style={{ 
@@ -24,8 +14,6 @@ const Garage = ({vehicles, user }) => {
             }} >
             <div className='vehicle__row'>
                 <Row vehicles={vehicles} user={user} />
-                {/* <VehicleCarousel /> */}
-                {/* {renderVehicles()} */}
             </div>
             
         </div>

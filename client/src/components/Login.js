@@ -8,8 +8,6 @@ const Login = ({handleLogin, checkSessionId, errors}) => {
 
     const [state, setState] = useState({})
 
-    
-
     const onChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value})
     }
@@ -33,13 +31,11 @@ const Login = ({handleLogin, checkSessionId, errors}) => {
         })
     }
 
-
     return (
         <div className='login__div' >
             <div className='login__form' >
                 <h6>Member login.</h6>
                 <Form onSubmit={onSubmit} >
-                    
                     <FloatingLabel
                         controlId="floatingInput"
                         label="Email address"

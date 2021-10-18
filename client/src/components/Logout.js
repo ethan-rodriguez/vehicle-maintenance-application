@@ -16,12 +16,7 @@ const Logout = ({setUser}) => {
                 console.log(`User has been logged out.`)
                 history.push('/login')
             }, 2000)
-        
     })
-
-    // const handleLogout = () => {
-        
-    // }
 
     return (
         <div className='spinner__div'>
@@ -30,7 +25,6 @@ const Logout = ({setUser}) => {
             <Spinner animation="border" role="status" >
                 <span className="visually-hidden">Loading...</span>
             </Spinner>
-            
         </div>
     )
 }

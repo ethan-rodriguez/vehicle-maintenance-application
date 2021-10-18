@@ -12,7 +12,6 @@ import CreateVehicle from './components/CreateVehicle';
 
 function App() {
 
-  
   const [user, setUser] = useState({})
   const [vehicles, setVehicles] = useState([])
   const [errors, setErrors] = useState([])
@@ -36,7 +35,6 @@ const handleVehicles = (data) => {
   }
 }
 
-// ---On page reload, checks session ID and automatically logs in user, sets user and sets user's vehicles
 const checkSessionId = () => {
   fetch('/me')
   .then(resp => resp.json())
@@ -48,7 +46,6 @@ const checkSessionId = () => {
   })
 }
 useEffect(checkSessionId, [])
-
 
   return (
     <div className="App">

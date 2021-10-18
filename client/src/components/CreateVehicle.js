@@ -3,8 +3,6 @@ import { Form, Button, FloatingLabel, Row, Col } from 'react-bootstrap'
 import Errors from './Errors'
 
 
-
-
 const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
 
     const [state, setState] = useState({})
@@ -12,7 +10,6 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
     const onChange = (e) => {
         setState({...state, [e.target.name]: e.target.value})
     }
-
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -32,7 +29,6 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
             checkSessionId()
         })
     }
-
 
     return (
         <div className='create__vehicle__div'>
@@ -112,9 +108,9 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                             </Form.Group>
                         </Col>
                     </Row> */}
-                            <Button variant="primary" type="submit">
-                                Submit
-                            </Button>
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
                 </Form>
             </div><br />
             <Errors errors={errors} />
