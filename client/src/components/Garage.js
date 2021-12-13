@@ -2,9 +2,11 @@ import React from 'react'
 import background from '../images/garage.jpeg'
 import Row from './Row'
 import UpdateVehicle from './UpdateVehicle'
+import AddMaintenanceRecord from './AddMaintenanceRecord'
+import CreateVehicle from './CreateVehicle'
 
 
-const Garage = ({vehicles, user }) => {
+const Garage = ({vehicles, user, errors }) => {
 
     return (
         <div id='garage__div' style={{ 
@@ -15,8 +17,10 @@ const Garage = ({vehicles, user }) => {
             }} >
             <div className='vehicle__row'>
                 <Row vehicles={vehicles} user={user} />
-                <UpdateVehicle />
+                {/* <AddMaintenanceRecord />
+                <UpdateVehicle /> */}
             </div>
+                <CreateVehicle errors={errors} />
             
         </div>
     )

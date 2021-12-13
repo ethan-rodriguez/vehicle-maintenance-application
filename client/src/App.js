@@ -61,7 +61,7 @@ useEffect(checkSessionId, [])
                   <Logout setUser={setUser} />
               </Route>
               <Route exact path='/garage'>
-                <Garage vehicles={vehicles} user={user} />
+                <Garage vehicles={vehicles} user={user} errors={errors} />
               </Route>
               <Route exact path='/createvehicle'>
                 <CreateVehicle handleVehicles={handleVehicles} checkSessionId={checkSessionId} errors={errors} />
