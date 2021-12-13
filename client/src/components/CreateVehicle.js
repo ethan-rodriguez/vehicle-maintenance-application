@@ -88,7 +88,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                                 label="Image URL"
                                 className="mb-3"
                             >
-                                <Form.Control onChange={onChange} name='image_url' type="text" placeholder="http://www.somewhere.com" />
+                                <Form.Control onChange={onChange} name='image_url' type="text" placeholder="image url" />
                             </FloatingLabel>
                         </Col>
                         
@@ -100,6 +100,8 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                             </FloatingLabel>
                         </Col>
                     </Row>
+                    
+                    {/* keep this feature below and imrpove on it once app is up and running. */}
                     {/* <Row className="g-2">
                         <Col md>
                             <Form.Group controlId="formFileLg" className="mb-3">
