@@ -17,10 +17,9 @@ const Garage = ({vehicles, user, errors }) => {
             }} >
             <div className='vehicle__row'>
                 <Row vehicles={vehicles} user={user} />
-                {/* <AddMaintenanceRecord />
-                <UpdateVehicle /> */}
-            </div>
+                <h6>Add a vehicle to your garage below...</h6>
                 <CreateVehicle errors={errors} />
+            </div>
             
         </div>
     )
