@@ -8,6 +8,7 @@ import Logout from './components/Logout';
 import Garage from './components/Garage';
 import NavBar from './components/NavBar';
 import CreateVehicle from './components/CreateVehicle';
+import UpdateVehicle from './components/UpdateVehicle';
 
 
 function App() {
@@ -65,6 +66,9 @@ useEffect(checkSessionId, [])
               </Route>
               <Route exact path='/createvehicle'>
                 <CreateVehicle handleVehicles={handleVehicles} checkSessionId={checkSessionId} errors={errors} />
+              </Route>
+              <Route exact path='/updatevehicle'>
+                <UpdateVehicle />
               </Route>
           </Switch>
     </div>

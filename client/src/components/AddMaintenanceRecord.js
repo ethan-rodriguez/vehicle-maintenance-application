@@ -11,3 +11,7 @@ const AddMaintenanceRecord = () => {
 }
 
 export default AddMaintenanceRecord
+
+
+
+const test = ('b' + 'a' + + 'a' + 'a').toLowerCase()
