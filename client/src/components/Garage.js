@@ -19,7 +19,7 @@ const Garage = ({vehicles, user, errors }) => {
             height: '100vh',
             }} >
             <div className='vehicle__row'>
-                {visible === true ? <Row vehicles={vehicles} user={user} setVisible={setVisible} visible={visible} /> : <VehiclePage />}
+                {visible === true ? <Row vehicles={vehicles} user={user} setVisible={setVisible} visible={visible} /> : <VehiclePage setVisible={setVisible} />}
                 {visible === true ? <CreateVehicle errors={errors} /> : null}
             </div>
             

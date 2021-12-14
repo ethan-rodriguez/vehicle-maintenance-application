@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const VehiclePage = () => {
+const VehiclePage = ({ setVisible }) => {
 
 
     return (
@@ -12,6 +12,7 @@ const VehiclePage = () => {
                 <br />
                 <br />
                 <h1>This is vehicle page</h1>
+                <button onClick={() => setVisible(true)} >Return to garage</button>
             </div>
         </div>
     )

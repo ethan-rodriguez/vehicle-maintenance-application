@@ -23,6 +23,8 @@ const VehicleCard = ({vehicle, visible, setVisible}) => {
                     <a href="#"><i className="fa fa-twitter"></i></a>
                     <a href="#"><i className="fa fa-linkedin"></i></a>
                     <a href="#"><i className="fa fa-facebook"></i></a>
+                    
+                    {/* ===== setVisible is passed down from garage.js ===== */}
                         <p><button onClick={() => setVisible(false)} >Select Vehicle</button></p>
                 </div>
             </div>
