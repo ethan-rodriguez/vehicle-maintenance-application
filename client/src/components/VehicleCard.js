@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './VehicleCard.css'
 
-const VehicleCard = ({vehicle}) => {
+const VehicleCard = ({vehicle, visible, setVisible}) => {
 
     const {id} = vehicle
 
     const handleButton = () => {
-        // id === vehicle.id ? //load vehicle page : //do nothing
+        
     }
     
 
@@ -23,9 +23,7 @@ const VehicleCard = ({vehicle}) => {
                     <a href="#"><i className="fa fa-twitter"></i></a>
                     <a href="#"><i className="fa fa-linkedin"></i></a>
                     <a href="#"><i className="fa fa-facebook"></i></a>
-                    <Link to='/vehiclepage'>
-                        <p><button onClick={handleButton} >Select Vehicle</button></p>
-                    </Link>
+                        <p><button onClick={() => setVisible(false)} >Select Vehicle</button></p>
                 </div>
             </div>
         </div>
