@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './VehicleCard.css'
 
-const VehicleCard = ({vehicle, setVisible, setSelectedVehicle}) => {
+const VehicleCard = ({vehicle, setVisible, setSelectedVehicleId}) => {
 
     const {id} = vehicle
 
     const handleSelectVehicle = (e) => {
         setVisible(false)
-        setSelectedVehicle(id)
+        setSelectedVehicleId(id)
     }
     
 

@@ -2,8 +2,9 @@ import React from 'react'
 
 
 
-const VehiclePage = ({ setVisible }) => {
+const VehiclePage = ({ setVisible, selectedVehicleId }) => {
 
+    
 
     return (
         <div>
