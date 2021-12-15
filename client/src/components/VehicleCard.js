@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './VehicleCard.css'
 
-const VehicleCard = ({vehicle, visible, setVisible}) => {
+const VehicleCard = ({vehicle, setVisible}) => {
 
     const {id} = vehicle
 

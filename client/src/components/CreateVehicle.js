@@ -33,6 +33,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
     return (
         <div className='create__vehicle__div'>
             <div className='create__vehicle__form'> 
+            <h5>Add additional vehicles to your garage using the form below.</h5>
                 <Form onSubmit={onSubmit} >
                     <Row className="g-2">
                         <Col md>
@@ -111,7 +112,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                         </Col>
                     </Row> */}
                     <Button variant="primary" type="submit">
-                        Submit
+                        Add Vehicle
                     </Button>
                 </Form>
             </div><br />
