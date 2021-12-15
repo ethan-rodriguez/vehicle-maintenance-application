@@ -2,12 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './VehicleCard.css'
 
-const VehicleCard = ({vehicle, setVisible}) => {
+const VehicleCard = ({vehicle, setVisible, setSelectedVehicle}) => {
 
     const {id} = vehicle
 
-    const handleButton = () => {
-        
+    const handleSelectVehicle = (e) => {
+        setVisible(false)
+        setSelectedVehicle(id)
     }
     
 
@@ -25,7 +26,7 @@ const VehicleCard = ({vehicle, setVisible}) => {
                     <a href="#"><i className="fa fa-facebook"></i></a>
                     
                     {/* ===== setVisible is passed down from garage.js ===== */}
-                        <p><button onClick={() => setVisible(false)} >Select Vehicle</button></p>
+                        <p><button onClick={handleSelectVehicle} >Select Vehicle</button></p>
                 </div>
             </div>
         </div>

@@ -2,11 +2,11 @@ import React from 'react'
 import VehicleCard from './VehicleCard'
 import './Row.css'
 
-const Row = ({vehicles, user, setVisible}) => {
+const Row = ({vehicles, user, setVisible, setSelectedVehicle}) => {
 
     const renderVehicles = () => {
         return vehicles.map(vehicle => {
-            return <VehicleCard vehicle={vehicle} key={vehicle.id} setVisible={setVisible} />
+            return <VehicleCard vehicle={vehicle} key={vehicle.id} setVisible={setVisible} setSelectedVehicle={setSelectedVehicle}/>
         })
     }
 
