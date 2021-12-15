@@ -17,7 +17,7 @@ function App() {
   const [user, setUser] = useState({})
   const [vehicles, setVehicles] = useState([])
   const [errors, setErrors] = useState([])
-  const [selectedVehicleId, setSelectedVehicleId] = useState({})
+  const [selectedVehicleId, setSelectedVehicleId] = useState(null)
 
   const history = useHistory()
 
