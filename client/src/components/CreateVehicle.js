@@ -26,7 +26,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
         .then(data => {
             console.log(data, 'vehicle created!')
             handleVehicles(data)
-            checkSessionId()
+            // checkSessionId()
         })
     }
 
@@ -42,7 +42,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                                 label="Year"
                                 className="mb-3"
                             >
-                                <Form.Control onChange={onChange} name='year' type="number" placeholder="2014" />
+                                <Form.Control onChange={onChange} name="year" type="number" placeholder="2014" />
                             </FloatingLabel>
                         </Col>
                         <Col md>
@@ -51,7 +51,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                                 label="Make"
                                 className="mb-3"
                             >
-                                <Form.Control onChange={onChange} name='make' type="text" placeholder="Toyota" />
+                                <Form.Control onChange={onChange} name="make" type="text" placeholder="Toyota" />
                             </FloatingLabel>
                         </Col>
                         <Col md>
@@ -60,7 +60,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                                 label="Model"
                                 className="mb-3"
                             >
-                                <Form.Control onChange={onChange} name='model' type="text" placeholder="Camry" />
+                                <Form.Control onChange={onChange} name="model" type="text" placeholder="Camry" />
                             </FloatingLabel>
                         </Col>
                     </Row>
@@ -71,7 +71,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                                 label="Mileage"
                                 className="mb-3"
                             >
-                                <Form.Control onChange={onChange} name='mileage' type="number" placeholder="74,000" />
+                                <Form.Control onChange={onChange} name="mileage" type="number" placeholder="74,000" />
                             </FloatingLabel>
                         </Col>
                         <Col md>
@@ -80,7 +80,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                                 label="VIN"
                                 className="mb-3"
                             >
-                                <Form.Control onChange={onChange} name='vin' type="text" placeholder="4Y1SL65848Z411439" />
+                                <Form.Control onChange={onChange} name="vin" type="text" placeholder="4Y1SL65848Z411439" />
                             </FloatingLabel>
                         </Col>
                         <Col md>
@@ -89,7 +89,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                                 label="Image URL"
                                 className="mb-3"
                             >
-                                <Form.Control onChange={onChange} name='image_url' type="text" placeholder="image url" />
+                                <Form.Control onChange={onChange} name="image_url" type="text" placeholder="image url" />
                             </FloatingLabel>
                         </Col>
                         
@@ -97,7 +97,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
                     <Row className="g-2">
                         <Col md>
                             <FloatingLabel controlId="floatingTextarea" label="Vehicle notes" className="mb-3">
-                                <Form.Control onChange={onChange} name='vechicle_notes' as="textarea" placeholder="Vehicle notes" />
+                                <Form.Control onChange={onChange} name="vehicle_notes" as="textarea" placeholder="Vehicle notes" />
                             </FloatingLabel>
                         </Col>
                     </Row>

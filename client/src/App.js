@@ -31,7 +31,7 @@ function App() {
   }
 
 const handleVehicles = (data) => {
-  data.errors ? setErrors(data.errors) : setVehicles(data)
+  data.errors ? setErrors(data.errors) : setVehicles([...vehicles, data])
   if (!data.errors){
     console.log(`${data.year} ${data.make} ${data.model} added to garage`)
     history.push('/garage')
@@ -64,10 +64,10 @@ useEffect(checkSessionId, [])
                   <Logout setUser={setUser} />
               </Route>
               <Route exact path='/garage'>
-                <Garage vehicles={vehicles} user={user} errors={errors} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} />
+                <Garage vehicles={vehicles} user={user} errors={errors} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} handleVehicles={handleVehicles} />
               </Route>
               <Route exact path='/createvehicle'>
-                <CreateVehicle handleVehicles={handleVehicles} checkSessionId={checkSessionId} errors={errors} />
+                <CreateVehicle  errors={errors} />
               </Route>
               <Route exact path='/updatevehicle'>
                 <UpdateVehicle />
