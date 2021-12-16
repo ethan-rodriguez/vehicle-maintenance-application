@@ -1,6 +1,12 @@
+.vehicle__row {
+    width: 100%;
+    
+}
+
+
 .row__div {
     margin-top: 3%;
-    
+    width: 104%;
 }
 
 .card__div {
@@ -9,6 +15,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    width: 35%;
+    width: 55%;
 }
 
