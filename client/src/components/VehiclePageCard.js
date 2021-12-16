@@ -9,6 +9,7 @@ const VehiclePageCard = ({vehicle}) => {
             <p>{vehicle.model}</p>
             <p>{vehicle.mileage}</p>
             <p>{vehicle.vin}</p>
+            
         </div>
     )
 }

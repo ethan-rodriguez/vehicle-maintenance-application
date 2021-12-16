@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import VehiclePageCard from './VehiclePageCard'
+import UpdateVehicle from './UpdateVehicle'
+import './VehiclePage.css'
 
 
 
@@ -17,13 +19,17 @@ const VehiclePage = ({ vehicles, setVisible, selectedVehicleId }) => {
 
     return (
         <div>
-            <div className='records__div'>
+            <div className='vehicle__info'>
                 <br />
                 <br />
                 <br />
                 <h1>This is vehicle page</h1>
                 {filterVehicles()}
                 <button onClick={() => setVisible(true)} >Return to garage</button>
+            </div>
+    
+            <div className="update__vehicle">
+                <UpdateVehicle />
             </div>
         </div>
     )

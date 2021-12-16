@@ -81,7 +81,7 @@ const UpdateVehicle = ({}) => {
                         <Row className="g-2">
                             <Col md>
                                 <FloatingLabel controlId="floatingTextarea" label="Vehicle notes" className="mb-3">
-                                    <Form.Control onChange={onChange} name='vechicle_notes' as="textarea" placeholder="Vehicle notes" />
+                                    <Form.Control onChange={onChange} name='vehicle_notes' as="textarea" placeholder="Vehicle notes" />
                                 </FloatingLabel>
                             </Col>
                         </Row>
