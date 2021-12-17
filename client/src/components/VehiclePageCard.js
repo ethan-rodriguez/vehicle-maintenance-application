@@ -1,6 +1,9 @@
 import React from 'react'
 
 const VehiclePageCard = ({vehicle}) => {
+
+    
+
     return (
         <div>
             <img src={vehicle.image_url} alt="vehicle image" style={{width: '30%'}}/>

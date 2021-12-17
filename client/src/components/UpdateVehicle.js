@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, FloatingLabel, Row, Col } from 'react-bootstrap'
 
-const UpdateVehicle = ({}) => {
+const UpdateVehicle = ({ }) => {
 
 
     const [state, setState] = useState({})
