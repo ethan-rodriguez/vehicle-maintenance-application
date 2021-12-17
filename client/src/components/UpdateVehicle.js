@@ -3,7 +3,6 @@ import { Form, Button, FloatingLabel, Row, Col } from 'react-bootstrap'
 
 const UpdateVehicle = ({ vehicles, vehicle, setVehicles, selectedVehicleId }) => {
 
-
     const [state, setState] = useState({year: vehicle.year, make: vehicle.make, model: vehicle.model, milage: vehicle.mileage, vin: vehicle.vin, vehicle_notes: vehicle.vehicle_notes, image_url: vehicle.image_url})
 
     const onChange = (e) => {
@@ -25,11 +24,9 @@ const UpdateVehicle = ({ vehicles, vehicle, setVehicles, selectedVehicleId }) =>
             .then(data => {
                 console.log(data)
                 setVehicles(vehicles.map(vehicle => vehicle.id === selectedVehicleId ? data : vehicle))
-
             })
     }
 
-    
     return (
         <div>
             <div className='update__div'>
