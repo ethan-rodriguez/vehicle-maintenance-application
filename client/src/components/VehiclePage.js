@@ -16,8 +16,10 @@ const VehiclePage = ({ vehicles, setVisible, selectedVehicleId, setVehicleUpdate
         return selected
     }
 
-    
-
+    const updateVehicle = () => {
+        let vehicleToUpdate = vehicles.filter(vehicle => vehicle.id === selectedVehicleId).map(vehicle => <UpdateVehicle key={vehicle.id} vehicle={vehicle}/>)
+        return vehicleToUpdate
+    }
 
     return (
         <div>
@@ -32,7 +34,7 @@ const VehiclePage = ({ vehicles, setVisible, selectedVehicleId, setVehicleUpdate
             </div>
     
             <div className="update__vehicle">
-                {updateVehicleVisible ? <UpdateVehicle /> : null}
+                {updateVehicleVisible ? updateVehicle() : null}
             </div>
         </div>
     )

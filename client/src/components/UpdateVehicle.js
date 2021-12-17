@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Form, Button, FloatingLabel, Row, Col } from 'react-bootstrap'
 
-const UpdateVehicle = ({ }) => {
+const UpdateVehicle = ({ vehicle }) => {
 
 
-    const [state, setState] = useState({})
+    const [state, setState] = useState({year: vehicle.year, make: vehicle.make, model: vehicle.model, milage: vehicle.mileage, vin: vehicle.vin, vehicle_notes: vehicle.vehicle_notes, image_url: vehicle.image_url})
 
     const onChange = (e) => {
         setState({...state, [e.target.name]: e.target.value})
@@ -26,7 +26,7 @@ const UpdateVehicle = ({ }) => {
                                     label="Year"
                                     className="mb-3"
                                 >
-                                    <Form.Control onChange={onChange} name='year' type="number" placeholder="2014" />
+                                    <Form.Control onChange={onChange} name='year' type="number" placeholder="2014" value={state.year} />
                                 </FloatingLabel>
                             </Col>
                             <Col md>
@@ -35,7 +35,7 @@ const UpdateVehicle = ({ }) => {
                                     label="Make"
                                     className="mb-3"
                                 >
-                                    <Form.Control onChange={onChange} name='make' type="text" placeholder="Toyota" />
+                                    <Form.Control onChange={onChange} name='make' type="text" placeholder="Toyota" value={state.make}/>
                                 </FloatingLabel>
                             </Col>
                             <Col md>
@@ -44,7 +44,7 @@ const UpdateVehicle = ({ }) => {
                                     label="Model"
                                     className="mb-3"
                                 >
-                                    <Form.Control onChange={onChange} name='model' type="text" placeholder="Camry" />
+                                    <Form.Control onChange={onChange} name='model' type="text" placeholder="Camry" value={state.model}/>
                                 </FloatingLabel>
                             </Col>
                         </Row>
@@ -55,7 +55,7 @@ const UpdateVehicle = ({ }) => {
                                     label="Mileage"
                                     className="mb-3"
                                 >
-                                    <Form.Control onChange={onChange} name='mileage' type="number" placeholder="74,000" />
+                                    <Form.Control onChange={onChange} name='mileage' type="number" placeholder="74,000" value={state.mileage}/>
                                 </FloatingLabel>
                             </Col>
                             <Col md>
@@ -64,7 +64,7 @@ const UpdateVehicle = ({ }) => {
                                     label="VIN"
                                     className="mb-3"
                                 >
-                                    <Form.Control onChange={onChange} name='vin' type="text" placeholder="4Y1SL65848Z411439" />
+                                    <Form.Control onChange={onChange} name='vin' type="text" placeholder="4Y1SL65848Z411439" value={state.vin} />
                                 </FloatingLabel>
                             </Col>
                             <Col md>
@@ -73,7 +73,7 @@ const UpdateVehicle = ({ }) => {
                                     label="Image URL"
                                     className="mb-3"
                                 >
-                                    <Form.Control onChange={onChange} name='image_url' type="text" placeholder="http://www.somewhere.com" />
+                                    <Form.Control onChange={onChange} name='image_url' type="text" placeholder="http://www.somewhere.com" value={state.image_url} />
                                 </FloatingLabel>
                             </Col>
                             
@@ -81,7 +81,7 @@ const UpdateVehicle = ({ }) => {
                         <Row className="g-2">
                             <Col md>
                                 <FloatingLabel controlId="floatingTextarea" label="Vehicle notes" className="mb-3">
-                                    <Form.Control onChange={onChange} name='vehicle_notes' as="textarea" placeholder="Vehicle notes" />
+                                    <Form.Control onChange={onChange} name='vehicle_notes' as="textarea" placeholder="Vehicle notes" value={state.vehicle_notes}/>
                                 </FloatingLabel>
                             </Col>
                         </Row>
