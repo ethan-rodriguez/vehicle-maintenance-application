@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, FloatingLabel, Row, Col } from 'react-bootstrap'
 
-const UpdateVehicle = ({ vehicle }) => {
+const UpdateVehicle = ({ vehicles, vehicle, setVehicles, selectedVehicleId }) => {
 
 
     const [state, setState] = useState({year: vehicle.year, make: vehicle.make, model: vehicle.model, milage: vehicle.mileage, vin: vehicle.vin, vehicle_notes: vehicle.vehicle_notes, image_url: vehicle.image_url})
@@ -10,15 +10,30 @@ const UpdateVehicle = ({ vehicle }) => {
         setState({...state, [e.target.name]: e.target.value})
     }
 
-    const onSubmit = () => {
+    const handleUpdateVehicle = (e) => {
+        e.preventDefault()
+        let config = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(state)
+        }
+        fetch(`/vehicles/${selectedVehicleId}`, config)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                setVehicles(vehicles.map(vehicle => vehicle.id === selectedVehicleId ? data : vehicle))
 
+            })
     }
 
     
     return (
         <div>
             <div className='update__div'>
-                <Form onSubmit={onSubmit} >
+                <Form onSubmit={handleUpdateVehicle} >
                         <Row className="g-2">
                             <Col md>
                                 <FloatingLabel

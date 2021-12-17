@@ -8,8 +8,6 @@ import Logout from './components/Logout';
 import Garage from './components/Garage';
 import NavBar from './components/NavBar';
 import CreateVehicle from './components/CreateVehicle';
-import UpdateVehicle from './components/UpdateVehicle';
-import VehiclePage from './components/VehiclePage';
 
 
 function App() {
@@ -18,7 +16,6 @@ function App() {
   const [vehicles, setVehicles] = useState([])
   const [errors, setErrors] = useState([])
   const [selectedVehicleId, setSelectedVehicleId] = useState(null)
-  const [vehicleUpdate, setVehicleUpdate] = useState({})
 
   const history = useHistory()
 
@@ -65,7 +62,7 @@ useEffect(checkSessionId, [])
                   <Logout setUser={setUser} />
               </Route>
               <Route exact path='/garage'>
-                <Garage vehicles={vehicles} user={user} errors={errors} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} handleVehicles={handleVehicles} setVehicleUpdate={setVehicleUpdate} />
+                <Garage vehicles={vehicles} setVehicles={setVehicles} user={user} errors={errors} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} handleVehicles={handleVehicles} />
               </Route>
               <Route exact path='/createvehicle'>
                 <CreateVehicle  errors={errors} />

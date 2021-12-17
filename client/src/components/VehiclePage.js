@@ -5,7 +5,7 @@ import './VehiclePage.css'
 
 
 
-const VehiclePage = ({ vehicles, setVisible, selectedVehicleId, setVehicleUpdate }) => {
+const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) => {
 
     const [state, setState] = useState()
 
@@ -17,7 +17,7 @@ const VehiclePage = ({ vehicles, setVisible, selectedVehicleId, setVehicleUpdate
     }
 
     const updateVehicle = () => {
-        let vehicleToUpdate = vehicles.filter(vehicle => vehicle.id === selectedVehicleId).map(vehicle => <UpdateVehicle key={vehicle.id} vehicle={vehicle}/>)
+        let vehicleToUpdate = vehicles.filter(vehicle => vehicle.id === selectedVehicleId).map(vehicle => <UpdateVehicle key={vehicle.id} vehicle={vehicle} vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} />)
         return vehicleToUpdate
     }
 
@@ -32,7 +32,6 @@ const VehiclePage = ({ vehicles, setVisible, selectedVehicleId, setVehicleUpdate
                 <button onClick={() => setVisible(true)} >Return to garage</button>
                 <button onClick={() => setUpdateVehicleVisible(!updateVehicleVisible)} >Update Vehicle Information</button>
             </div>
-    
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}
             </div>
