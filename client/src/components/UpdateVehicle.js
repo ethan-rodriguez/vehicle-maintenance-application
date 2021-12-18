@@ -106,7 +106,7 @@ const UpdateVehicle = ({ vehicles, vehicle, setVehicles, selectedVehicleId }) =>
                             </Col>
                         </Row> */}
                         <Button variant="primary" type="submit">
-                            Submit
+                            Update Vehicle
                         </Button>
                     </Form>
             </div>

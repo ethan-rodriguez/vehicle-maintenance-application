@@ -8,7 +8,7 @@ const NavBar = ({user}) => {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
                 <Container>
                     <Navbar.Brand href="/garage">
-                        {user ? `${user.username}'s` : ''} Garage
+                        {user ? `${user.username}'s` : 'The'} Garage
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
