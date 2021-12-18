@@ -8,9 +8,27 @@
 }
 
 .garage__button {
+    border: 1px outset blue;
+    background-color: lightblue;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
 
+.garage__button:hover {
+    background-color: blue;
+    color: white;
 }
 
 .update__button {
-    
+    border: 1px outset blue;
+    background-color: lightblue;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.update__button:hover {
+    background-color: blue;
+    color: white;
 }
