@@ -16,7 +16,7 @@ const VehicleCard = ({vehicle, setVisible, setSelectedVehicleId}) => {
         <div>
             <div className='vehicle__card'>
                 <div className="card">
-                    <img src={vehicle.image_url} alt="vehicle image" style={{width: '100%'}}/>
+                    <img className="image__div" src={vehicle.image_url} alt="vehicle image" style={{width: '100%'}} />
                     <h5>{vehicle.year} {vehicle.make} {vehicle.model}</h5>
                     <p className="title">Mileage: {vehicle.mileage}</p>
                     <p>VIN: {vehicle.vin}</p>

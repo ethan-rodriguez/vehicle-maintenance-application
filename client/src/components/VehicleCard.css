@@ -5,6 +5,7 @@
   text-align: center;
   font-family: arial;
   border: 1px;
+  height: inherit
 }
 
 .price {
@@ -34,4 +35,9 @@
   margin: 10px;
   padding: 2%;
   width: 120%;
+  height: 100%;
+}
+
+.image__div {
+  height: 55%;
 }

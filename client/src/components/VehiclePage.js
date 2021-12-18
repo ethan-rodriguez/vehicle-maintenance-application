@@ -3,22 +3,18 @@ import VehiclePageCard from './VehiclePageCard'
 import UpdateVehicle from './UpdateVehicle'
 import './VehiclePage.css'
 
-
-
 const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) => {
 
-    const [state, setState] = useState()
 
     const [updateVehicleVisible, setUpdateVehicleVisible] = useState(false)
 
+    let selectedVehicle = vehicles.filter(vehicle => vehicle.id === selectedVehicleId)
     const filterVehicles = () => {
-        let selected = vehicles.filter(vehicle => vehicle.id === selectedVehicleId).map(vehicle => <VehiclePageCard key={vehicle.id} vehicle={vehicle}/>)
-        return selected
+        return selectedVehicle.map(vehicle => <VehiclePageCard key={vehicle.id} vehicle={vehicle}/>)
     }
 
     const updateVehicle = () => {
-        let vehicleToUpdate = vehicles.filter(vehicle => vehicle.id === selectedVehicleId).map(vehicle => <UpdateVehicle key={vehicle.id} vehicle={vehicle} vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} />)
-        return vehicleToUpdate
+        return selectedVehicle.map(vehicle => <UpdateVehicle key={vehicle.id} vehicle={vehicle} vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} />)
     }
 
     return (
@@ -27,8 +23,8 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
                 <br />
                 <br />
                 <br />
-                
                 {filterVehicles()}
+                <p>{selectedVehicle[0].year}</p>
             </div>
             <div className="garage__button__div">
             </div>
@@ -43,6 +39,7 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
             </div>
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}
+                <br />
             </div>
         </div>
     )
