@@ -32,4 +32,6 @@
 
 .vehicle__card {
   margin: 10px;
+  padding: 2%;
+  width: 120%;
 }

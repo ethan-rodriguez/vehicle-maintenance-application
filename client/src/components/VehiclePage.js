@@ -22,19 +22,24 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
     }
 
     return (
-        <div>
+        <div className="vehicle__page">
             <div className='vehicle__info'>
                 <br />
                 <br />
                 <br />
-                <h1>This is vehicle page</h1>
+                
                 {filterVehicles()}
-                <div className="garage__button__div">
-                    <button onClick={() => setVisible(true)} className="garage__button">Return to garage</button>
-                </div>
-                <div className="update__button__div">
-                    <button onClick={() => setUpdateVehicleVisible(!updateVehicleVisible)} className="update__button" >Update Vehicle Information</button>
-                </div>
+            </div>
+            <div className="garage__button__div">
+            </div>
+            <div className="buttons__div">
+                <button 
+                    onClick={() => setVisible(true)} className="garage__button">Return to garage
+                </button>
+                <button 
+                onClick={() => setUpdateVehicleVisible(!updateVehicleVisible)} 
+                className="update__button" >Update Vehicle Information
+                </button>
             </div>
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}
