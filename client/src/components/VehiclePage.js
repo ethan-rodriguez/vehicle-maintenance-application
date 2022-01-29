@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import VehiclePageCard from './VehiclePageCard'
 import UpdateVehicle from './UpdateVehicle'
+import DeleteVehicle from './DeleteVehicle'
 // import './VehiclePage.css'
 
 const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) => {
@@ -24,7 +25,7 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
                 <br />
                 <br />
                 {filterVehicles()}
-                <p>{selectedVehicle[0].year}</p>
+                {/* <p>{selectedVehicle[0].year}</p> */}
             </div>
             <div className="garage__button__div">
             </div>
@@ -38,7 +39,7 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
                     onClick={() => setUpdateVehicleVisible(!updateVehicleVisible)} 
                     className="update__button" >Update Vehicle Information
                 </button>
-            </div>
+            </div><DeleteVehicle vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} />
 
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}

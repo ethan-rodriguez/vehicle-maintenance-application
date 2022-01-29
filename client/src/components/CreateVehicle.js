@@ -26,7 +26,7 @@ const CreateVehicle = ({handleVehicles, checkSessionId, errors}) => {
         .then(data => {
             console.log(data, 'vehicle created!')
             handleVehicles(data)
-            checkSessionId()
+            // checkSessionId()
         })
     }
 
