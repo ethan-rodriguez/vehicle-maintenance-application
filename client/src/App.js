@@ -41,7 +41,7 @@ const checkSessionId = () => {
   .then(resp => resp.json())
   .then(data => {
     console.log(`${data.username} has been auto logged in`)
-    console.log(`${data.username} owns ${data.vehicles.length} vehicle(s)`)
+    // console.log(`${data.username} owns ${data.vehicles.length} vehicle(s)`)
     setUser(data)
     setVehicles(data.vehicles)
   })
