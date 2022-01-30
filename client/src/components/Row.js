@@ -16,8 +16,10 @@ const Row = ({vehicles, user, setVisible, setSelectedVehicleId}) => {
     const countVehicles = () => {
         if (vehicles.length === 1) {
             return <h5>{`${user.username}, you have ${vehicles.length} vehicle in your garage.`}</h5>
-        } else {
+        } else if (vehicles.length > 1) {
             return <h5>{`${user.username}, you have ${vehicles.length} vehicles in your garage.`}</h5> 
+        } else {
+            return <h5>{`${user.username}, you do not have any vehicles in your garage.  Please add a vehicle using the form below.`}</h5>
         }
     }
 

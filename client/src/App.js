@@ -68,9 +68,9 @@ useEffect(checkSessionId, [])
               <Route exact path='/createvehicle'>
                 <CreateVehicle  errors={errors} />
               </Route>
-              <Route>
+              {/* <Route>
                 <DeleteVehicle selectedVehicleId={selectedVehicleId}/>
-              </Route>
+              </Route> */}
           </Switch>
     </div>
   );

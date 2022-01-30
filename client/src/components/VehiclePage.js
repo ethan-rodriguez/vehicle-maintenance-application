@@ -39,7 +39,9 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
                     onClick={() => setUpdateVehicleVisible(!updateVehicleVisible)} 
                     className="update__button" >Update Vehicle Information
                 </button>
-            </div><DeleteVehicle vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} />
+            </div>
+            
+            <DeleteVehicle vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} setVisible={setVisible} />
 
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}

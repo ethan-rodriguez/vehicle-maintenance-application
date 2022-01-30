@@ -1,10 +1,7 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
-const DeleteVehicle = ({selectedVehicleId, vehicles, setVehicles}) => {
-
-
-    const history = useHistory()
+const DeleteVehicle = ({selectedVehicleId, vehicles, setVehicles, setVisible}) => {
 
     const handleDeleteVehicle = () => {
         let config = {
@@ -12,12 +9,20 @@ const DeleteVehicle = ({selectedVehicleId, vehicles, setVehicles}) => {
         }
         fetch(`vehicles/${selectedVehicleId}`, config)
             setVehicles(vehicles.filter(vehicle => vehicle.id != selectedVehicleId))
-            history.push('/garage')
+    }
+
+    const renderComponent = () => {
+        setVisible(true)
+    }
+
+    const handleClick = () => {
+        handleDeleteVehicle()
+        renderComponent()
     }
 
     return (
         <div>
-            <button onClick={() => {handleDeleteVehicle()}}>
+            <button onClick={() => {handleClick()}}>
                 Remove vehicle
             </button>
         </div>
