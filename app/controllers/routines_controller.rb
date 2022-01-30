@@ -1,5 +1,6 @@
 class RoutinesController < ApplicationController
   before_action :set_routine, only: [:show, :update, :destroy]
+  # wrap_parameters :routine, include: [:routine, :vehicle_id]
 
   # GET /routines
   def index
@@ -15,6 +16,7 @@ class RoutinesController < ApplicationController
 
   # POST /routines
   def create
+    # byebug
     @routine = Routine.new(routine_params)
 
     if @routine.save
@@ -46,6 +48,6 @@ class RoutinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def routine_params
-      params.require(:routine).permit(:routine, :vehicle_id)
+      params.permit(:routine, :vehicle_id)
     end
 end

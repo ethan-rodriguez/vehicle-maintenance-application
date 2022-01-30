@@ -45,7 +45,7 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
             
             <DeleteVehicle vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} setVisible={setVisible} />
 
-            <CreateMaintenanceRecord />
+            <CreateMaintenanceRecord selectedVehicleId={selectedVehicleId} />
 
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}
