@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import background from '../images/garage.jpeg'
 import Row from './Row'
 import UpdateVehicle from './UpdateVehicle'
-import AddMaintenanceRecord from './AddMaintenanceRecord'
 import CreateVehicle from './CreateVehicle'
 import VehiclePage from './VehiclePage'
 

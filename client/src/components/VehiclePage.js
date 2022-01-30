@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import VehiclePageCard from './VehiclePageCard'
 import UpdateVehicle from './UpdateVehicle'
 import DeleteVehicle from './DeleteVehicle'
+import CreateMaintenanceRecord from './CreateMaintenanceRecord'
+
 // import './VehiclePage.css'
 
 const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) => {
@@ -42,6 +44,8 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
             </div>
             
             <DeleteVehicle vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} setVisible={setVisible} />
+
+            <CreateMaintenanceRecord />
 
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}
