@@ -3,6 +3,7 @@ import VehiclePageCard from './VehiclePageCard'
 import UpdateVehicle from './UpdateVehicle'
 import DeleteVehicle from './DeleteVehicle'
 import CreateMaintenanceRecord from './CreateMaintenanceRecord'
+import VehicleHistory from './VehicleHistory'
 
 // import './VehiclePage.css'
 
@@ -46,6 +47,8 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
             <DeleteVehicle vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} setVisible={setVisible} />
 
             <CreateMaintenanceRecord selectedVehicleId={selectedVehicleId} />
+
+            <VehicleHistory selectedVehicleId={selectedVehicle}/>
 
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}
