@@ -3,12 +3,24 @@ import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
 
 
 const NavBar = ({user}) => {
+
+    const whosGarage = () => {
+        if (user) {
+           return `${user.username}'s Garage`
+        } else if (!user.username) {
+            return 'Welcome to the Garage'
+        } else {
+            return 'Welcome to the Garage'
+        }
+    }
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
                 <Container>
                     <Navbar.Brand href="/garage">
-                        {user ? `${user.username}'s` : 'The'} Garage
+                        {/* {user ? `${user.username}'s` : 'The'} Garage */}
+                        {whosGarage()}
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
