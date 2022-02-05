@@ -2,15 +2,16 @@ import React, { useEffect } from 'react'
 
 const VehicleHistory = ({ selectedVehicleId }) => {
 
-    const [vehicleHistory, setVehicleHistory] = React.useState()
+    const [history, setHistory] = React.useState([])
 
     const fetchVehicleHistory = () => {
         fetch(`/vehicles/${selectedVehicleId[0].id}`)
         .then(resp => resp.json())
         .then(data => {
             console.log(selectedVehicleId[0].id)
-            console.log(data.routines)
-            // setVehicleHistory(data.routines)
+            console.log(data)
+            console.log('history map', data.routines.map(history => history.routine))
+            setHistory(data.routines.map(history => history.routine))
         })
     }
 
@@ -21,7 +22,7 @@ const VehicleHistory = ({ selectedVehicleId }) => {
 
     return (
         <div>
-            <h6>{vehicleHistory}</h6>
+            <h6>{history}</h6>
         </div>
     )
 }
