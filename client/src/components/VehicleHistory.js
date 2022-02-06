@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import VehicleHistoryCard from './vehicleHistoryCard'
 
-const VehicleHistory = ({ selectedVehicleId }) => {
+const VehicleHistory = ({ selectedVehicleId, histories, setHistories }) => {
 
-    const [histories, setHistories] = React.useState([])
+    // const [histories, setHistories] = React.useState([])
 
     const fetchVehicleHistory = () => {
         fetch(`/vehicles/${selectedVehicleId[0].id}`)
@@ -19,7 +19,7 @@ const VehicleHistory = ({ selectedVehicleId }) => {
     }, [])
 
 const renderVehicleHistory = () => {
-    return histories.map(vehicleHistory => <VehicleHistoryCard vehicleHistory={vehicleHistory} selectedVehicleId={selectedVehicleId} setHistories={setHistories}/>)
+    return histories.map(vehicleHistory => <VehicleHistoryCard vehicleHistory={vehicleHistory} selectedVehicleId={selectedVehicleId} setHistories={setHistories} histories={histories}/>)
 }
 
     return (

@@ -17,7 +17,7 @@ function App() {
   const [vehicles, setVehicles] = useState([])
   const [errors, setErrors] = useState([])
   const [selectedVehicleId, setSelectedVehicleId] = useState(null)
-
+  const [histories, setHistories] = useState([])
   const history = useHistory()
 
   const handleLogin = (data) => {
@@ -63,7 +63,7 @@ useEffect(checkSessionId, [])
                   <Logout setUser={setUser} />
               </Route>
               <Route exact path='/garage'>
-                <Garage vehicles={vehicles} setVehicles={setVehicles} user={user} errors={errors} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} handleVehicles={handleVehicles} />
+                <Garage vehicles={vehicles} setVehicles={setVehicles} user={user} errors={errors} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} handleVehicles={handleVehicles} histories={histories} setHistories={setHistories} />
               </Route>
               <Route exact path='/createvehicle'>
                 <CreateVehicle  errors={errors} />

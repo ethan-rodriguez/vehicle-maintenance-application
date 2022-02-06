@@ -6,7 +6,7 @@ import CreateVehicle from './CreateVehicle'
 import VehiclePage from './VehiclePage'
 
 
-const Garage = ({vehicles, setVehicles, user, errors, setSelectedVehicleId, selectedVehicleId, handleVehicles }) => {
+const Garage = ({vehicles, setVehicles, user, errors, setSelectedVehicleId, selectedVehicleId, handleVehicles, histories, setHistories }) => {
 
     const [visible, setVisible] = useState(true)
 
@@ -19,7 +19,7 @@ const Garage = ({vehicles, setVehicles, user, errors, setSelectedVehicleId, sele
             }} >
             <div className='vehicle__row'>
                 {
-                visible === true ? <Row vehicles={vehicles} user={user} setVisible={setVisible} setSelectedVehicleId={setSelectedVehicleId} /> : <VehiclePage vehicles={vehicles} setVehicles={setVehicles} setVisible={setVisible} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} />
+                visible === true ? <Row vehicles={vehicles} user={user} setVisible={setVisible} setSelectedVehicleId={setSelectedVehicleId} /> : <VehiclePage vehicles={vehicles} setVehicles={setVehicles} setVisible={setVisible} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} setHistories={setHistories} histories={histories} />
                 }
                 {
                 visible === true ? <CreateVehicle errors={errors} handleVehicles={handleVehicles} /> : null

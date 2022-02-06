@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CreateMaintenanceRecord = ({selectedVehicleId}) => {
+const CreateMaintenanceRecord = ({selectedVehicleId, setHistories, histories}) => {
 
     const [state, setState] = React.useState({vehicle_id: selectedVehicleId})
 
@@ -22,6 +22,8 @@ const CreateMaintenanceRecord = ({selectedVehicleId}) => {
         .then(resp => resp.json())
         .then(data => {
             console.log(data)
+            
+            // setHistories(data.routines)
         })
 
     }

@@ -7,7 +7,7 @@ import VehicleHistory from './VehicleHistory'
 
 // import './VehiclePage.css'
 
-const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) => {
+const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId, setHistories, histories}) => {
 
 
     const [updateVehicleVisible, setUpdateVehicleVisible] = useState(false)
@@ -46,9 +46,9 @@ const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId }) =
             
             <DeleteVehicle vehicles={vehicles} setVehicles={setVehicles} selectedVehicleId={selectedVehicleId} setVisible={setVisible} />
 
-            <CreateMaintenanceRecord selectedVehicleId={selectedVehicleId} />
+            <CreateMaintenanceRecord selectedVehicleId={selectedVehicleId} setHistories={setHistories} histories={histories} />
 
-            <VehicleHistory selectedVehicleId={selectedVehicle}/>
+            <VehicleHistory selectedVehicleId={selectedVehicle} setHistories={setHistories} histories={histories} />
 
             <div className="update__vehicle">
                 {updateVehicleVisible ? updateVehicle() : null}

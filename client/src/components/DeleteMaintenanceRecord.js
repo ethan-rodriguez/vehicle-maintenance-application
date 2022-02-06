@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DeleteMaintenanceRecord = ({vehicleHistory, setHistories}) => {
+const DeleteMaintenanceRecord = ({vehicleHistory, setHistories, histories}) => {
 
     const handleDeleteRecord = () => {
         console.log(vehicleHistory)
@@ -8,11 +8,7 @@ const DeleteMaintenanceRecord = ({vehicleHistory, setHistories}) => {
             method: 'DELETE'
         }
         fetch(`routines/${vehicleHistory.id}`, config)
-        .then(resp => resp.json())
-        .then(data => {
-            console.log(data)
-            setHistories(data)
-        })
+            setHistories(histories.filter(history => history.id != vehicleHistory.id))
     }
 
     const handleClick = () => {
