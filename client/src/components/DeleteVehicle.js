@@ -16,7 +16,7 @@ const DeleteVehicle = ({selectedVehicleId, vehicles, setVehicles, setVisible}) =
     }
 
     const handleClick = () => {
-        let message = "Are you sure you want to delete this vehicle?  All maintenance records will be deleted.  This cannont be undone!"
+        let message = "Are you sure you want to delete this vehicle?  This cannot be undone.  The vehicle and all maintenance records associated with this vehicle will be permanently removed"
         if (window.confirm(message) == true){
             handleDeleteVehicle()
             renderComponent()
