@@ -20,12 +20,12 @@ const CreateMaintenanceRecord = ({selectedVehicleId, setHistories, histories}) =
         }
         fetch('routines', config)
         .then(resp => resp.json())
-        .then(data => {
-            console.log(data)
-            
-            // setHistories(data.routines)
+        .then(record => {
+            console.log('record from create maintenance record', record)
+            console.log('consolelog', [...histories, record])
+            setHistories([record, ...histories])
+            e.target.reset()
         })
-
     }
 
 
