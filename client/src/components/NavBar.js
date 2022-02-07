@@ -6,8 +6,8 @@ const NavBar = ({user}) => {
 
     const whosGarage = () => {
         if (user) {
-           return `${user.username}'s Garage`
-        } else if (!user.username) {
+           return `${user.username}, Welcome to your garage`
+        } else if (null) {
             return 'Welcome to the Garage'
         } else {
             return 'Welcome to the Garage'

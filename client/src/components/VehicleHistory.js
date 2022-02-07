@@ -10,7 +10,7 @@ const VehicleHistory = ({ selectedVehicleId, histories, setHistories }) => {
         .then(resp => resp.json())
         .then(data => {
             console.log('histories', data.routines)
-            setHistories(data.routines)
+            setHistories(data.routines.reverse())
         })
     }
 
