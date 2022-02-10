@@ -9,7 +9,7 @@ import VehicleHistory from './VehicleHistory'
 
 const VehiclePage = ({ vehicles, setVehicles, setVisible, selectedVehicleId, setHistories, histories}) => {
 
-
+    // ==State for conditionally rendering UpdateVehicle component
     const [updateVehicleVisible, setUpdateVehicleVisible] = useState(false)
 
     let selectedVehicle = vehicles.filter(vehicle => vehicle.id === selectedVehicleId)
