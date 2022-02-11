@@ -12,7 +12,6 @@ const Row = ({vehicles, user, setVisible, setSelectedVehicleId}) => {
 
     const diplayVehicles = vehicles.map(vehicle => <VehicleCard vehicle={vehicle} key={vehicle.id} setVisible={setVisible} setSelectedVehicleId={setSelectedVehicleId} />)
 
-
     const countVehicles = () => {
         if (vehicles.length === 1) {
             return <h5>{`${user.username}, you have ${vehicles.length} vehicle in your garage.`}</h5>
@@ -22,8 +21,6 @@ const Row = ({vehicles, user, setVisible, setSelectedVehicleId}) => {
             return <h5>{`${user.username}, you do not have any vehicles in your garage.  Please add a vehicle using the form below.`}</h5>
         }
     }
-
-
 
     return (
             <div className='row__div'>
