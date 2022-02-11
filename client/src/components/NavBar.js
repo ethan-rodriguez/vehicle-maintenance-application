@@ -18,15 +18,15 @@ const NavBar = ({user}) => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
                 <Container>
-                    <Navbar.Brand href="/garage">
+                    <Navbar.Brand href="#action1">
                         {/* {user ? `${user.username}'s` : 'The'} Garage */}
                         {whosGarage()}
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="/createvehicle">Add Vehicle</Nav.Link>
+                            <Nav.Link href="/garage">View Garage</Nav.Link>
+                            <Nav.Link href="/createvehicle">List All Maintenance Records</Nav.Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
