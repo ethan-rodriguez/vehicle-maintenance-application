@@ -8,7 +8,7 @@ import Logout from './components/Logout';
 import Garage from './components/Garage';
 import NavBar from './components/NavBar';
 import CreateVehicle from './components/CreateVehicle';
-
+import AllVehicles from './components/AllVehicles';
 
 
 function App() {
@@ -54,19 +54,22 @@ useEffect(checkSessionId, [])
         <NavBar user={user} />
           <Switch>
               <Route exact path='/signup'>
-                  <Signup handleLogin={handleLogin} errors={errors} />
+                    <Signup handleLogin={handleLogin} errors={errors} />
               </Route>
               <Route exact path='/login'>
-                  <Login handleLogin={handleLogin} checkSessionId={checkSessionId} errors={errors} />
+                    <Login handleLogin={handleLogin} checkSessionId={checkSessionId} errors={errors} />
               </Route>
               <Route exact path='/logout'>
-                  <Logout setUser={setUser} />
+                    <Logout setUser={setUser} />
               </Route>
               <Route exact path='/garage'>
-                <Garage vehicles={vehicles} setVehicles={setVehicles} user={user} errors={errors} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} handleVehicles={handleVehicles} histories={histories} setHistories={setHistories} />
+                    <Garage vehicles={vehicles} setVehicles={setVehicles} user={user} errors={errors} setSelectedVehicleId={setSelectedVehicleId} selectedVehicleId={selectedVehicleId} handleVehicles={handleVehicles} histories={histories} setHistories={setHistories} />
               </Route>
               <Route exact path='/createvehicle'>
-                <CreateVehicle  errors={errors} />
+                    <CreateVehicle  errors={errors} />
+              </Route>
+              <Route exact path='/allvehicles'>
+                    <AllVehicles user={user} />
               </Route>
           </Switch>
     </div>
