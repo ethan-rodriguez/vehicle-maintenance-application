@@ -1,18 +1,28 @@
 import React, {useEffect} from 'react'
+import AllVehiclesCard from './AllVehiclesCard'
+import vehicleHistoryCard from './vehicleHistoryCard'
 
-const AllVehicles = (props) => {
+const AllVehicles = ({ user, vehicles, histories, setHistories, selectedVehicleId}) => {
 
-    const fetchAllVehicles = () => {
-        fetch(`vehicles/${props.user.id}`)
-        .then(resp => resp.json())
-        .then(data => {
-            console.log(data)
-        })
+
+    const renderAllVehiclesCard = () => {
+        return vehicles.map(vehicle => <AllVehiclesCard key={vehicle.id} vehicle={vehicle} histories={histories} setHistories={setHistories} selectedVehicleId={selectedVehicleId} />)
+    }
+
+    const fetchVehicleHistory = () => {
+        console.log('vehicle id', selectedVehicleId)
+        console.log('allvehicles histories', histories)
+
+        // fetch(`/vehicles/${selectedVehicleId}`)
+        // .then(resp => resp.json())
+        // .then(data => {
+        //     console.log('histories', data.routines)
+        //     setHistories(data.routines)
+        // })
     }
 
     useEffect(() => {
-        fetchAllVehicles()
-        
+        fetchVehicleHistory()
     }, [])
 
     return (
@@ -21,7 +31,7 @@ const AllVehicles = (props) => {
             <br />
             <br />
             <br />
-            <p>all vehicles component</p>
+            {renderAllVehiclesCard()}
         </div>
     )
 }

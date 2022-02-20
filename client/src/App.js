@@ -69,7 +69,7 @@ useEffect(checkSessionId, [])
                     <CreateVehicle  errors={errors} />
               </Route>
               <Route exact path='/allvehicles'>
-                    <AllVehicles user={user} vehicles={vehicles}/>
+                    <AllVehicles vehicles={vehicles} histories={histories} setHistories={setHistories} selectedVehicleId={selectedVehicleId} />
               </Route>
           </Switch>
     </div>
