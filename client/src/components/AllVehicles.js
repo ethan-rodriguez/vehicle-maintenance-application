@@ -1,16 +1,19 @@
 import React, {useEffect} from 'react'
 
-const AllVehicles = ({user}) => {
+const AllVehicles = (props) => {
 
-    const fetchAllUserVehicles = () => {
-        fetch(`user/${user.id}`)
+    const fetchAllVehicles = () => {
+        fetch(`vehicles/${props.user.id}`)
         .then(resp => resp.json())
         .then(data => {
             console.log(data)
         })
     }
 
-    
+    useEffect(() => {
+        fetchAllVehicles()
+        
+    }, [])
 
     return (
         <div>

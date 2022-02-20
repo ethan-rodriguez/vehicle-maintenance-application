@@ -16,7 +16,6 @@ class RoutinesController < ApplicationController
 
   # POST /routines
   def create
-    # byebug
     @routine = Routine.new(routine_params)
 
     if @routine.save
