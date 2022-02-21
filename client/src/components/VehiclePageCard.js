@@ -7,7 +7,7 @@ const VehiclePageCard = ({vehicle}) => {
     return (
         <div>
             <div>
-                <img src={vehicle.image_url} alt="vehicle image" style={{width: '20%', height: '20%'}}/>
+                <img src={vehicle.image_url} alt="vehicle" style={{width: '20%', height: '20%'}}/>
             </div>
             <div>
             <p>{vehicle.year}</p>

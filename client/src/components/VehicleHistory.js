@@ -19,7 +19,7 @@ const VehicleHistory = ({ selectedVehicleId, histories, setHistories }) => {
     }, [])
 
 const renderVehicleHistory = () => {
-    return histories.map(vehicleHistory => <VehicleHistoryCard key={histories.id} vehicleHistory={vehicleHistory} selectedVehicleId={selectedVehicleId} setHistories={setHistories} histories={histories}/>)
+    return histories.map(vehicleHistory => <VehicleHistoryCard key={vehicleHistory.id} vehicleHistory={vehicleHistory} selectedVehicleId={selectedVehicleId} setHistories={setHistories} histories={histories}/>)
 }
 
     return (

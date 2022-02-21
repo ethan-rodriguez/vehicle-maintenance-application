@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './VehicleCard.css'
 
 const VehicleCard = ({vehicle, setVisible, setSelectedVehicleId}) => {
@@ -16,14 +15,14 @@ const VehicleCard = ({vehicle, setVisible, setSelectedVehicleId}) => {
         <div>
             <div className='vehicle__card'>
                 <div className="card">
-                    <img className="image__div" src={vehicle.image_url} alt="vehicle image" style={{width: '100%'}} />
+                    <img className="image__div" src={vehicle.image_url} alt="vehicle" style={{width: '100%'}} />
                     <h5>{vehicle.year} {vehicle.make} {vehicle.model}</h5>
                     <p className="title">Mileage: {vehicle.mileage}</p>
                     <p>VIN: {vehicle.vin}</p>
-                    <a href="#"><i className="fa fa-dribbble"></i></a>
+                    {/* <a href="#"><i className="fa fa-dribbble"></i></a>
                     <a href="#"><i className="fa fa-twitter"></i></a>
                     <a href="#"><i className="fa fa-linkedin"></i></a>
-                    <a href="#"><i className="fa fa-facebook"></i></a>
+                    <a href="#"><i className="fa fa-facebook"></i></a> */}
                     
                     {/* ===== setVisible is passed down from garage.js ===== */}
                         <p><button onClick={handleSelectVehicle} >Select Vehicle</button></p>

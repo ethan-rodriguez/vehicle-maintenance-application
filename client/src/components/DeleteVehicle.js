@@ -8,7 +8,7 @@ const DeleteVehicle = ({selectedVehicleId, vehicles, setVehicles, setVisible}) =
             method: 'DELETE'
         }
         fetch(`vehicles/${selectedVehicleId}`, config)
-            setVehicles(vehicles.filter(vehicle => vehicle.id != selectedVehicleId))
+            setVehicles(vehicles.filter(vehicle => vehicle.id !== selectedVehicleId))
     }
 
     const renderComponent = () => {
@@ -17,7 +17,7 @@ const DeleteVehicle = ({selectedVehicleId, vehicles, setVehicles, setVisible}) =
 
     const handleClick = () => {
         let message = "Are you sure you want to delete this vehicle?  This cannot be undone.  The vehicle and all maintenance records associated with this vehicle will be permanently removed"
-        if (window.confirm(message) == true){
+        if (window.confirm(message) === true){
             handleDeleteVehicle()
             renderComponent()
         } 

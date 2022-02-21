@@ -8,7 +8,7 @@ const DeleteMaintenanceRecord = ({vehicleHistory, setHistories, histories}) => {
             method: 'DELETE'
         }
         fetch(`routines/${vehicleHistory.id}`, config)
-            setHistories(histories.filter(history => history.id != vehicleHistory.id))
+            setHistories(histories.filter(history => history.id !== vehicleHistory.id))
     }
 
     const handleClick = () => {

@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
-import background from '../images/garage.jpeg'
+// import background from '../images/garage.jpeg'
 import Row from './Row'
-import UpdateVehicle from './UpdateVehicle'
 import CreateVehicle from './CreateVehicle'
 import VehiclePage from './VehiclePage'
-import AllVehicles from './AllVehicles'
-import { Switch, Route} from 'react-router-dom'
 
 
 const Garage = ({vehicles, setVehicles, user, errors, setSelectedVehicleId, selectedVehicleId, handleVehicles, histories, setHistories }) => {
@@ -27,11 +24,7 @@ const Garage = ({vehicles, setVehicles, user, errors, setSelectedVehicleId, sele
                 visible === true ? <CreateVehicle errors={errors} handleVehicles={handleVehicles} /> : null
                 }
             </div>
-            {/* <Switch>
-                <Route exact path='/allvehicles'>
-                    <AllVehicles selectedVehicleId={selectedVehicleId} />
-                </Route>
-            </Switch> */}
+            
         </div>
     )
 }
