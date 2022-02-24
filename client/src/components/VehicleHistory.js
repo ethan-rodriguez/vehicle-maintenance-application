@@ -5,16 +5,24 @@ const VehicleHistory = ({ selectedVehicleId, histories, setHistories }) => {
 
     // const [histories, setHistories] = React.useState([])
 
-    const fetchVehicleHistory = () => {
-        fetch(`/vehicles/${selectedVehicleId[0].id}`)
-        .then(resp => resp.json())
-        .then(data => {
-            console.log('histories', data.routines)
-            setHistories(data.routines.reverse())
-        })
-    }
+    // const fetchVehicleHistory = () => {
+    //     fetch(`/vehicles/${selectedVehicleId[0].id}`)
+    //     .then(resp => resp.json())
+    //     .then(data => {
+    //         console.log('histories', data.routines)
+    //         setHistories(data.routines.reverse())
+    //     })
+    // }
 
     useEffect(() => {
+        const fetchVehicleHistory = () => {
+            fetch(`/vehicles/${selectedVehicleId[0].id}`)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log('histories', data.routines)
+                setHistories(data.routines.reverse())
+            })
+        }
         fetchVehicleHistory()
     }, [])
 

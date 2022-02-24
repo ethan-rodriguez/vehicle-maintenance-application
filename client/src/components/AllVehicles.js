@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import AllVehiclesCard from './AllVehiclesCard'
 
 
-const AllVehicles = ({ user, vehicles, histories, setHistories, selectedVehicleId}) => {
+const AllVehicles = ({ user, vehicles, setVehicles, histories, setHistories, selectedVehicleId}) => {
 
 
     const renderAllVehiclesCard = () => {
@@ -11,17 +11,15 @@ const AllVehicles = ({ user, vehicles, histories, setHistories, selectedVehicleI
 
     useEffect(() => {
         const fetchVehicleHistory = () => {
-            return console.log('vehicle id', selectedVehicleId, 'allvehicles histories', histories)
-    
-            // fetch(`/vehicles/${selectedVehicleId}`)
-            // .then(resp => resp.json())
-            // .then(data => {
-            //     console.log('histories', data.routines)
-            //     setHistories(data.routines)
-            // })
+            fetch(`/vehicles/`)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log('histories', data)
+                setHistories(data)
+            })
         }
         fetchVehicleHistory()
-    })
+    },[])
 
     return (
         <div>
