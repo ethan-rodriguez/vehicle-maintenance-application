@@ -27,7 +27,7 @@ const Login = ({handleLogin, checkSessionId, errors}) => {
         .then(data => {
             console.log(data, `${data.username} is now logged in!`)
             handleLogin(data)
-            checkSessionId()
+            // checkSessionId()
         })
     }
 
